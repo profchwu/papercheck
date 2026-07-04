@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NTHU Sustainability Paper Checker | Developed by Professor Chih-Hung Wu</title>
+  <title>NTHU Sustainability Paper Checker V1.0 | Revised 2026-07-04</title>
   <script src="assets/sdg-core-index.js"></script>
   <style>
     :root {
@@ -522,8 +522,8 @@
       <div class="brand">
         <div class="brand-mark" aria-hidden="true">SDG</div>
         <div>
-          <h1>NTHU Sustainability Paper Checker</h1>
-          <p class="subtitle">Developed by Professor Chih-Hung Wu, Institute of Mathematics and Science Education, National Tsing Hua University.</p>
+          <h1>NTHU Sustainability Paper Checker V1.0</h1>
+          <p class="subtitle">Revised 2026-07-04. 國立清華大學數理教育研究所 吳智鴻教授開發</p>
           <p class="subtitle">A browser-based SDG detectability checker for title, abstract, and keywords.</p>
         </div>
       </div>
@@ -898,7 +898,8 @@
         });
       });
 
-      const negativeMatches = (module.negativeTerms || [])
+      const negativeTerms = Array.isArray(module.negativeTerms) ? module.negativeTerms : [];
+      const negativeMatches = negativeTerms
         .filter(term => containsTerm(`${parsedPaper.title} ${parsedPaper.abstract} ${parsedPaper.keywords}`, term))
         .slice(0, 10);
 
@@ -1110,7 +1111,7 @@
           </div>
         </div>
 
-        <div class="load-status">Loaded Elsevier keyword modules: ${escapeHtml(loaded)}</div>
+        <div class="load-status">Checked Elsevier keyword modules: ${escapeHtml(loaded)}</div>
 
         <div class="sdg-card">
           <div class="eyebrow">Matched Elsevier-derived terms</div>
@@ -1164,13 +1165,11 @@
         fillParsed(parsed);
       }
 
-      el.summary.innerHTML = `<div class="empty">Analyzing SDG fit and loading Elsevier keyword modules...</div>`;
+      el.summary.innerHTML = `<div class="empty">Analyzing SDG fit across all 17 Elsevier keyword modules...</div>`;
       el.review.innerHTML = `<div class="empty">Preparing marked review...</div>`;
 
       const pre = preScreenSdgs(parsedPaper);
-      const top = pre.slice(0, 3).filter(item => item.score > 0);
-      const firstScore = top[0] ? top[0].score : 0;
-      const toLoad = top.filter((item, index) => index === 0 || item.score >= firstScore * 0.7).map(item => item.id);
+      const toLoad = (window.SDG_CORE_INDEX || FALLBACK_CORE_INDEX).map(item => item.id).sort((a, b) => a - b);
 
       try {
         await Promise.all(toLoad.map(loadSdgKeywordModule));
