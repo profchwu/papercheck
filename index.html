@@ -25131,8 +25131,19 @@ window.SDG_KEYWORDS[17] = {
       srStatus: document.getElementById("srStatus")
     };
 
+    const fieldLabelPattern = "(?:title|paper\\s+title|abstract|keywords?|key\\s*words?|\\u8ad6\\u6587\\u984c\\u76ee|\\u984c\\u76ee|\\u6458\\u8981|\\u95dc\\u9375\\u5b57)";
+
     function stripFieldLabel(text) {
-      return (text || "").replace(/^\s*(?:title|paper title|abstract|keywords?|key words|\u8ad6\u6587\u984c\u76ee|\u984c\u76ee|\u6458\u8981|\u95dc\u9375\u5b57)\s*[:\uFF1A]?\s*/i, "").trim();
+      return (text || "").replace(new RegExp("^\\s*" + fieldLabelPattern + "\\s*[:\\uFF1A\\-\\u2013\\u2014]?\\s*", "i"), "").trim();
+    }
+
+    function fieldLabelRegex(label) {
+      const labels = {
+        title: "(?:title|paper\\s+title|\\u8ad6\\u6587\\u984c\\u76ee|\\u984c\\u76ee)",
+        abstract: "(?:abstract|\\u6458\\u8981)",
+        keywords: "(?:keywords?|key\\s*words?|\\u95dc\\u9375\\u5b57)"
+      };
+      return new RegExp("(^|\\n|\\s{2,})\\s*" + labels[label] + "\\s*[:\\uFF1A\\-\\u2013\\u2014]?\\s*", "gi");
     }
 
     function looksLikeKeywordBlock(text) {
@@ -25151,17 +25162,22 @@ window.SDG_KEYWORDS[17] = {
 
       const tagged = {};
       const patterns = [
-        ["title", /(?:^|\n)\s*(?:title|paper title|\u8ad6\u6587\u984c\u76ee|\u984c\u76ee)\s*[:\uFF1A]?\s*/i],
-        ["abstract", /(?:^|\n)\s*(?:abstract|\u6458\u8981)\s*[:\uFF1A]?\s*/i],
-        ["keywords", /(?:^|\n)\s*(?:keywords?|key words|\u95dc\u9375\u5b57)\s*[:\uFF1A]?\s*/i]
+        ["title", fieldLabelRegex("title")],
+        ["abstract", fieldLabelRegex("abstract")],
+        ["keywords", fieldLabelRegex("keywords")]
       ];
 
       const hits = patterns
-        .map(([name, regex]) => {
-          const match = raw.match(regex);
-          return match ? { name, index: match.index, length: match[0].length } : null;
+        .flatMap(([name, regex]) => {
+          return [...raw.matchAll(regex)].map(match => {
+            const prefixLength = match[1] ? match[1].length : 0;
+            return {
+              name,
+              index: match.index + prefixLength,
+              length: match[0].length - prefixLength
+            };
+          });
         })
-        .filter(Boolean)
         .sort((a, b) => a.index - b.index);
 
       if (hits.length) {
