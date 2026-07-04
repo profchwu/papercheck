@@ -1,206 +1,230 @@
-# Development Prompt and Process Summary
+# 開發提示詞與過程彙整
 
-This file summarizes the user requirements and development process used to create NTHU Sustainability Paper Checker V1.0.
+本文件整理「清華永續論文檢查工具 V1.0」的需求形成、資料蒐集、開發與修正過程，可作為之後使用其他 AI 開發工具重建或擴充本專案的依據。
 
-## Initial Goal
+## 一、最初需求
 
-Build an HTML-based checker that lets a user paste a paper title, abstract, and keywords, then evaluates whether the paper is likely to meet the requirements for NTHU sustainability paper recognition.
+使用者希望建立一個 HTML 版本的檢查程式，可讓使用者上傳或貼上論文的題名、摘要與關鍵字，並針對是否符合「清華大學永續論文」相關規範提供修改建議。
 
-Core requirements:
+核心要求包括：
 
-- Use front-end-only HTML/CSS/JavaScript.
-- Deploy easily on GitHub Pages.
-- Use an English interface.
-- Provide clear PASS or FAIL.
-- Identify the most suitable SDG topic.
-- Provide revision suggestions.
-- Mark items needing revision in red.
-- Search and download NTHU sustainability paper recognition references.
-- Download Elsevier SDG keyword files for all 17 SDGs before building the app.
+- 程式必須是純前端網頁技術。
+- 必須方便部署到 GitHub Pages。
+- 使用者可以一次貼上 Title、Abstract、Keywords。
+- 程式需自動分辨三個欄位。
+- 需提供整體建議。
+- 需要修改的地方要以紅色標註。
+- 採認風險必須有明確的 `PASS` 或 `FAIL`。
+- 檢查結果需顯示最適合的 SDG 主題。
+- 介面以英文為主。
+- 網頁需精美、可直接使用。
 
-## Research Prompt Summary
+## 二、資料蒐集需求
 
-The development process included requests to:
+使用者要求在開始寫程式前，先上網搜尋並下載相關資料。
 
-- Search online for National Tsing Hua University sustainability paper recognition information.
-- Search related SDG mapping and classification references.
-- Download Elsevier 2023 Sustainable Development Goals Mapping data.
-- Use Elsevier SDG keyword/query data for SDG matching.
-- Compare title, abstract, and keywords against SDG-related terms.
+資料蒐集方向包括：
 
-Main references used:
+- 清華大學 SDGs 與永續論文採認相關資料。
+- Elsevier 2023 SDG Mapping dataset。
+- SDG 17 項相關 keyword/query 文件。
+- 聯合國 SDG 官方資料。
+- 其他 SDG mapping 或研究分類相關資料。
 
-- NTHU SDGs: https://sdgs.nthu.edu.tw/
-- Elsevier SDG Mapping dataset: https://elsevier.digitalcommonsdata.com/datasets/y2zyy9vwzy/1
-- UN SDGs: https://sdgs.un.org/goals
+主要參考來源：
 
-## Planning Prompt Summary
+- 國立清華大學 SDGs  
+  https://sdgs.nthu.edu.tw/
+- Elsevier 2023 Sustainable Development Goals Mapping  
+  https://elsevier.digitalcommonsdata.com/datasets/y2zyy9vwzy/1
+- 聯合國永續發展目標  
+  https://sdgs.un.org/goals
 
-The user requested a program plan that another AI development tool could use to implement the app.
+## 三、規劃書需求
 
-Planning requirements:
+使用者要求先寫程式規劃書，並且規劃書需能讓其他 AI 開發工具依據該文件完成程式。
 
-- List program features.
-- List data sources, links, and downloaded files.
-- Explain limitations.
-- Explain that the result cannot fully replace NTHU's official decision.
-- Specify that the app must run entirely in the browser.
-- Specify that the interface should be polished.
-- Specify that SDG keyword data should be loaded efficiently.
+規劃書需包含：
 
-## Implementation Prompt Summary
+- 程式功能
+- 需要參考的資料來源連結
+- 下載檔案
+- 前端技術架構
+- SDG 檢查邏輯
+- PASS/FAIL 判斷規則
+- UI 設計方向
+- 部署方式
+- 限制與免責聲明
 
-The user then requested the full program.
+後續也要求規劃書必須明確說明：
 
-The app was implemented as:
+- 本工具不能完全取代清華大學官方認定。
+- 判斷結果僅供參考。
+- 最終採認仍需以清華大學正式標準為準。
+
+## 四、程式實作需求
+
+使用者要求直接寫出程式。
+
+實作內容包括：
 
 - `index.html`
 - `assets/sdg-core-index.js`
-- `assets/sdg-keywords/sdg-01.js` through `sdg-17.js`
+- `assets/sdg-keywords/sdg-01.js` 至 `sdg-17.js`
 - `sources/references.md`
 - `tools/build_sdg_data.ps1`
 
-Core app behavior:
+主要功能包括：
 
-- Parse pasted Title, Abstract, and Keywords.
-- Check SDG keyword matches.
-- Show PASS/FAIL.
-- Show best-fit SDG.
-- Show matched terms.
-- Show red revision marks and suggestions.
+- 大型貼上文字框。
+- 自動解析 Title、Abstract、Keywords。
+- 可手動編輯三個欄位。
+- 檢查 SDG keyword 命中。
+- 顯示 `PASS` 或 `FAIL`。
+- 顯示最佳 SDG。
+- 顯示命中詞。
+- 顯示紅色修正標註。
+- 顯示修改建議。
 
-## Deployment Prompt Summary
+## 五、GitHub 部署需求
 
-The user requested GitHub deployment:
+使用者要求建立新的 GitHub repository：
 
-- Create repo: `papercheck`
-- Public repository
-- Deploy through GitHub Pages
+- repo 名稱：`papercheck`
+- public repository
+- 部署到 GitHub Pages
 
-Because command-line push authentication did not match the repository owner, deployment was completed through the GitHub web interface.
+過程中因命令列 GitHub 帳號與 repository owner 權限不一致，改用 GitHub 網頁介面完成檔案上傳與 GitHub Pages 設定。
 
-Public site:
-
-https://profchwu.github.io/papercheck/
-
-Repository:
-
+GitHub repository：  
 https://github.com/profchwu/papercheck
 
-## Iteration Prompt Summary
+GitHub Pages：  
+https://profchwu.github.io/papercheck/
 
-The user then requested multiple improvements:
+## 六、欄位解析修正需求
 
-### Field Parsing Improvements
+使用者指出 Title、Abstract、Keywords 的判斷需要更準確，不應要求嚴格格式。
 
-User requirement:
+使用者提供的規則：
 
-- Title, Abstract, and Keywords should be detected more accurately.
-- Format should not be strict.
-- Usually first paragraph is Title, second is Abstract, third is Keywords.
+- 通常第一個段落是 Title。
+- 第二個段落是 Abstract。
+- 第三個部分是 Keyword。
 
-Implemented:
+後續又要求：
 
-- paragraph-based parsing
-- line-based parsing fallback
-- relaxed label parsing
-- support for title before `ABSTRACT`
+- `Title:`
+- `Abstract:`
+- `Keywords:`
 
-### Attribution and Disclaimer
+這三個欄位格式抓取需更寬鬆。
 
-User requirement:
+實作後支援：
 
-- Add `國立清華大學數理教育研究所 吳智鴻教授開發`.
-- Add English statement that results are for reference only and final recognition follows NTHU.
+- 大小寫不敏感。
+- 冒號可有可無。
+- 支援全形冒號。
+- 支援連字號與破折號。
+- 支援 `Keyword`、`Keywords`、`Key words`。
+- 支援 Title 在 `ABSTRACT` 標籤前面的格式。
+- 支援同一行連續標籤。
 
-Implemented:
+## 七、作者與免責聲明需求
 
-- Chinese author attribution in the header.
-- English reference-only disclaimer.
+使用者要求在標題區加入：
 
-### Sample Testing
+`國立清華大學數理教育研究所 吳智鴻教授開發`
 
-User provided a sustainability education paper example.
+並加入英文說明：
 
-Test result:
+- 本判斷結果僅供參考。
+- 判定結果仍需以清華大學為準。
 
-- Fields parsed correctly.
-- Decision: PASS.
-- Best-fit SDG: SDG 4 Quality Education.
+實作後頁面包含：
 
-### Relaxed Label Parsing
+- 中文作者標示。
+- 英文 reference-only disclaimer。
+- 明確指出 final recognition decision must follow National Tsing Hua University's official review and standards。
 
-User requirement:
+## 八、範例測試需求
 
-- `Title:`, `Abstract:`, `Keywords:` should be detected more flexibly.
-- Do not require uppercase/lowercase exactness.
-- Do not require colon.
+使用者提供一篇永續教育與遊戲式學習相關論文範例，要求檢查：
 
-Implemented support for:
+- 是否能正確抓到 Title。
+- 是否能正確抓到 Abstract。
+- 是否能正確抓到 Keywords。
+- 是否能判斷是否通過。
+- 是否能抓到正確 SDG。
 
-- `Title`, `title`, `TITLE`
-- `Abstract`, `abstract`, `ABSTRACT`
-- `Keyword`, `Keywords`, `Key words`, `KEYWORDS`
-- optional colon, full-width colon, hyphen, or dash
-- same-line labels
+測試結果：
 
-### Full 17 SDG Keyword Check
+- Title 正確抓取。
+- Abstract 正確抓取。
+- Keywords 正確抓取。
+- 判定為 `PASS`。
+- 最適合 SDG 為 `SDG 4 Quality Education`。
+- 命中詞包含 `education`、`learning`、`barrier`、`design`。
 
-User asked whether the app correctly checks precise keywords for all 17 SDGs.
+## 九、全 17 項 SDG 檢查需求
 
-Finding:
+使用者詢問程式是否正確檢查 SDG 17 項的精準 keywords。
 
-- Earlier versions used pre-screening and loaded only likely SDG modules.
+檢查後發現：
 
-Implemented in V1.0:
+- 舊版流程是先預判最可能 SDG，再載入相近 SDG 的 keyword 模組。
+- 這樣速度較快，但不能稱為完整檢查 17 項 SDG。
 
-- final Check now scans all 17 Elsevier-derived SDG keyword modules.
-- UI now states `Checked Elsevier keyword modules`.
+因此 V1.0 修正為：
 
-## Version Summary
+- 正式按下 `Check` 時，掃描 SDG 1 至 SDG 17 全部 Elsevier-derived keyword 模組。
+- UI 改為顯示 `Checked Elsevier keyword modules`。
+- 修正部分 SDG 模組排除詞格式造成中斷的問題。
 
-### Initial GitHub Pages App
+## 十、版本號與日期需求
 
-- Static browser-only checker.
-- PASS/FAIL.
-- Best-fit SDG.
-- Elsevier-derived keyword modules.
+使用者要求標題加入版本號，從 V1.0 開始算，並加入修正日期。
 
-### Field Parsing Update
+實作後：
 
-- Looser paragraph and line parsing.
+- 頁面標題：`NTHU Sustainability Paper Checker V1.0`
+- 修正日期：`Revised 2026-07-04`
+- 作者：`國立清華大學數理教育研究所 吳智鴻教授開發`
 
-### Attribution Update
+## 十一、文件化需求
 
-- Added author attribution and NTHU final-decision disclaimer.
+使用者要求製作：
 
-### Relaxed Label Parsing Update
+- `README.md`
+- 程式規格書
+- `Prompt.md`
 
-- Case-insensitive and punctuation-flexible Title/Abstract/Keywords recognition.
+並且本機資料夾與 GitHub 都要有一份。
 
-### V1.0 Update
+後續使用者要求這些文件必須全部改為中文。
 
-- Added V1.0 title and revision date.
-- Added Chinese author attribution.
-- Changed final check to scan all 17 SDGs.
-- Confirmed sample paper returns PASS and SDG 4.
+本次文件包含：
 
-## Reusable Build Prompt
+- `README.md`：程式說明、主要功能、版本紀錄、資料來源與部署方式。
+- `SPEC.md`：程式規格、欄位解析規則、SDG 檢查邏輯、PASS/FAIL 門檻、UI 規格與限制。
+- `Prompt.md`：需求、提示詞、開發與修正過程彙整。
 
-Use the following prompt to recreate or extend the project:
+## 十二、可重用開發提示詞
+
+以下提示詞可用於其他 AI 開發工具重建或延伸本專案：
 
 ```text
-Build a static GitHub Pages web app named NTHU Sustainability Paper Checker.
-The app must run entirely in front-end HTML/CSS/JavaScript without backend, database, API key, or AI API.
-The interface should be primarily English and polished.
-Users must be able to paste title, abstract, and keywords into one text area.
-The parser must flexibly detect Title, Abstract, and Keywords regardless of case, colon usage, or common paragraph layout.
-The checker must compare the paper against Elsevier 2023 SDG Mapping keyword data for all 17 SDGs.
-The result must show PASS or FAIL, best-fit SDG, checked modules, matched terms, and revision suggestions.
-Mark revision issues in red and matched SDG terms in green.
-Add the header: NTHU Sustainability Paper Checker V1.0, Revised 2026-07-04.
-Add author attribution: 國立清華大學數理教育研究所 吳智鴻教授開發.
-Add a disclaimer that results are for reference only and final recognition must follow National Tsing Hua University's official review and standards.
-Document sources, version history, limitations, and deployment steps in README.md and SPEC.md.
+請建立一個可部署於 GitHub Pages 的純前端網頁工具，名稱為「清華永續論文檢查工具」。
+程式只能使用 HTML、CSS、JavaScript，不可使用後端、資料庫、API key 或 AI API。
+使用者需能一次貼上論文的 Title、Abstract、Keywords。
+欄位解析必須寬鬆，支援大小寫不同、冒號有無不同、段落式貼上、Title 在 ABSTRACT 前方，以及 Keywords 在最後一段或最後一行的格式。
+程式需依據 Elsevier 2023 SDG Mapping dataset 建立 SDG 1 至 SDG 17 的 keyword 模組。
+正式檢查時必須掃描全部 17 項 SDG keyword 模組。
+結果需顯示 PASS 或 FAIL、最佳 SDG、次要 SDG、命中詞、修改建議與紅色標註。
+頁面需加入標題 NTHU Sustainability Paper Checker V1.0。
+頁面需加入修正日期 Revised 2026-07-04。
+頁面需加入作者標示：國立清華大學數理教育研究所 吳智鴻教授開發。
+需加入英文免責聲明：結果僅供參考，最終認定以國立清華大學正式審查與標準為準。
+請建立 README.md、SPEC.md、Prompt.md，並以中文撰寫。
 ```
 
