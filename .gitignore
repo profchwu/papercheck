@@ -1,0 +1,13 @@
+# Local/downloaded source archives are too large for GitHub Pages deployment.
+sources/*
+!sources/references.md
+
+# Generated duplicate data kept for local development; the app uses assets/.
+data/
+
+# Local automation/runtime folders.
+.agents/
+
+# Temporary files.
+*.tmp
+*.log

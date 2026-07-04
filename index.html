@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NTHU Sustainability Paper Checker</title>
+  <script src="assets/sdg-core-index.js"></script>
+  <style>
+    :root {
+      --bg: #f6f8f5;
+      --surface: #ffffff;
+      --surface-2: #eef4ef;
+      --ink: #17231f;
+      --muted: #64716c;
+      --line: #d9e3dc;
+      --primary: #0f6f5d;
+      --primary-2: #134e44;
+      --accent: #b97a13;
+      --blue: #2d6187;
+      --red: #b42332;
+      --red-bg: #fff1f1;
+      --green-bg: #e9f7ef;
+      --fail-bg: #fff2f0;
+      --shadow: 0 18px 45px rgba(28, 48, 40, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    button,
+    textarea,
+    input {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    .shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #103d36;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: 0;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .disclaimer {
+      max-width: 440px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      background: var(--surface);
+      color: #4b4031;
+      font-size: 13px;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel-header {
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    .panel-note {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .panel-body {
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #31413b;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    textarea,
+    input {
+      width: 100%;
+      border: 1px solid #cdd8d2;
+      border-radius: 8px;
+      background: #fbfdfb;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+    }
+
+    textarea:focus,
+    input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15, 111, 93, 0.16);
+      background: #fff;
+    }
+
+    .paste-box {
+      min-height: 210px;
+      padding: 14px;
+      resize: vertical;
+    }
+
+    .field-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .field-grid textarea {
+      min-height: 92px;
+      padding: 12px;
+      resize: vertical;
+    }
+
+    .field-grid #abstract {
+      min-height: 160px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      min-height: 42px;
+      padding: 0 15px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 800;
+      transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(15, 111, 93, 0.20);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-2);
+    }
+
+    .btn-secondary {
+      background: #e7efea;
+      color: #17352e;
+    }
+
+    .btn-secondary:hover {
+      background: #d9e6df;
+    }
+
+    .result-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .decision-card {
+      border-radius: 8px;
+      padding: 18px;
+      display: grid;
+      gap: 8px;
+      border: 1px solid var(--line);
+      background: #f7faf8;
+    }
+
+    .decision-card.pass {
+      border-color: #b9dfc5;
+      background: var(--green-bg);
+    }
+
+    .decision-card.fail {
+      border-color: #f1bbb7;
+      background: var(--fail-bg);
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+      font-size: 11px;
+    }
+
+    .decision-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .decision {
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .decision.pass {
+      color: #11623a;
+    }
+
+    .decision.fail {
+      color: var(--red);
+    }
+
+    .confidence {
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: #384840;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .sdg-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 15px;
+      background: var(--surface);
+    }
+
+    .sdg-main {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .sdg-badge {
+      min-width: 76px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #193d36;
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .sdg-name {
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .sdg-official {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #f7faf8;
+      color: #33443d;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .load-status {
+      font-size: 12px;
+      color: var(--muted);
+      padding: 10px 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 8px 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: #2c3b35;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .tab.active {
+      background: #173d35;
+      border-color: #173d35;
+      color: #fff;
+    }
+
+    .review-section {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .review-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .review-card h3 {
+      margin: 0;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #f7faf8;
+      font-size: 14px;
+    }
+
+    .marked-text {
+      padding: 14px;
+      color: #24342e;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 14px;
+    }
+
+    mark.issue {
+      color: var(--red);
+      background: var(--red-bg);
+      border-bottom: 2px solid var(--red);
+      padding: 1px 3px;
+      border-radius: 4px;
+    }
+
+    mark.match {
+      color: #124d3f;
+      background: #e8f6ef;
+      border-bottom: 2px solid #2e8f73;
+      padding: 1px 3px;
+      border-radius: 4px;
+    }
+
+    .suggestions {
+      margin: 0;
+      padding-left: 19px;
+      color: #2c3834;
+    }
+
+    .suggestions li {
+      margin: 8px 0;
+    }
+
+    .empty {
+      padding: 44px 18px;
+      text-align: center;
+      color: var(--muted);
+      border: 1px dashed #c5d3cb;
+      border-radius: 8px;
+      background: #fbfdfb;
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer a {
+      color: var(--primary-2);
+      font-weight: 800;
+    }
+
+    .sr-status {
+      position: absolute;
+      left: -9999px;
+    }
+
+    @media (max-width: 980px) {
+      .topbar,
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .disclaimer {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        padding: 18px;
+      }
+
+      .brand {
+        align-items: flex-start;
+      }
+
+      .brand-mark {
+        width: 44px;
+        height: 44px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      .panel-header,
+      .panel-body {
+        padding: 16px;
+      }
+
+      .decision-line,
+      .sdg-main {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">SDG</div>
+        <div>
+          <h1>NTHU Sustainability Paper Checker</h1>
+          <p class="subtitle">A browser-based SDG detectability checker for title, abstract, and keywords.</p>
+        </div>
+      </div>
+      <div class="disclaimer">
+        This tool is not an official NTHU decision. PASS/FAIL reflects this tool's rule-based assessment using downloaded SDG mapping references.
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="panel" aria-labelledby="input-heading">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title" id="input-heading">Paper Input</h2>
+            <p class="panel-note">Paste all fields together, then parse or edit each field manually.</p>
+          </div>
+        </div>
+        <div class="panel-body">
+          <label for="rawInput">Paste title, abstract, and keywords</label>
+          <textarea id="rawInput" class="paste-box" placeholder="Title:&#10;Carbon footprint assessment...&#10;&#10;Abstract:&#10;This study evaluates...&#10;&#10;Keywords:&#10;carbon footprint; greenhouse gas emissions; renewable energy"></textarea>
+
+          <div class="actions" aria-label="Input actions">
+            <button class="btn btn-secondary" type="button" id="parseBtn">Parse</button>
+            <button class="btn btn-primary" type="button" id="checkBtn">Check</button>
+            <button class="btn btn-secondary" type="button" id="sampleBtn">Load sample</button>
+            <button class="btn btn-secondary" type="button" id="clearBtn">Clear</button>
+          </div>
+
+          <div class="field-grid">
+            <div>
+              <label for="title">Title</label>
+              <textarea id="title" placeholder="Paper title"></textarea>
+            </div>
+            <div>
+              <label for="abstract">Abstract</label>
+              <textarea id="abstract" placeholder="Paper abstract"></textarea>
+            </div>
+            <div>
+              <label for="keywords">Keywords</label>
+              <textarea id="keywords" placeholder="keyword 1; keyword 2; keyword 3"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="result-stack" aria-labelledby="result-heading">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <h2 class="panel-title" id="result-heading">Assessment</h2>
+              <p class="panel-note">Best-fit SDG and rule-based recognition result.</p>
+            </div>
+            <button class="btn btn-secondary" type="button" id="copyBtn">Copy suggestions</button>
+          </div>
+          <div class="panel-body">
+            <div id="summary">
+              <div class="empty">Run a check to see PASS/FAIL, best-fit SDG, matched terms, and revision advice.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <h2 class="panel-title">Marked Review</h2>
+              <p class="panel-note">Red marks show text that should be revised. Green marks show matched SDG terms.</p>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div id="review">
+              <div class="empty">Marked title, abstract, and keywords will appear here.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      References: Elsevier 2023 Sustainable Development Goals (SDGs) Mapping, DOI 10.17632/y2zyy9vwzy.1, CC BY 4.0;
+      <a href="https://sdgs.un.org/goals">UN Sustainable Development Goals</a>;
+      <a href="https://sdgs.nthu.edu.tw/">NTHU SDGs</a>.
+    </footer>
+  </div>
+
+  <div class="sr-status" id="srStatus" aria-live="polite"></div>
+
+  <script>
+    const FIELD_WEIGHTS = { title: 3, keywords: 3, abstract: 1.5 };
+    const PASS_THRESHOLDS = {
+      finalScore: 12,
+      titleOrKeywordMatch: 1,
+      abstractMatch: 1,
+      minKeywordCount: 3,
+      minAbstractSignalTypes: 3
+    };
+
+    const weakTerms = [
+      "model", "analysis", "system", "performance", "method", "approach", "framework",
+      "study", "research", "algorithm", "data", "result", "results", "evaluation"
+    ];
+
+    const overclaimingPatterns = [
+      "fully solves", "guarantees sustainability", "complete solution", "solves all",
+      "eliminates all", "perfectly sustainable", "zero impact"
+    ];
+
+    const abstractSignals = {
+      purpose: ["aim", "purpose", "objective", "investigate", "examine", "evaluate", "assess", "analyze", "propose"],
+      method: ["using", "method", "survey", "experiment", "model", "dataset", "life-cycle", "simulation", "interview", "regression"],
+      result: ["result", "results", "show", "found", "indicate", "demonstrate", "reveal", "improve", "reduce", "increase"],
+      impact: ["implication", "impact", "contribute", "mitigation", "adaptation", "policy", "sustainable", "sustainability", "sdg"]
+    };
+
+    const loadedModules = new Set();
+    let latestSuggestions = [];
+
+    const FALLBACK_CORE_INDEX = [
+      { id: 1, code: "SDG 1", name: "No Poverty", officialName: "End poverty in all its forms everywhere", coreTerms: ["poverty", "poor households", "social protection", "income inequality", "financial inclusion", "living wage", "poverty alleviation", "economic vulnerability"], aliases: ["low income", "deprivation", "welfare", "social safety net"] },
+      { id: 2, code: "SDG 2", name: "Zero Hunger", officialName: "End hunger, achieve food security and improved nutrition and promote sustainable agriculture", coreTerms: ["food security", "hunger", "malnutrition", "nutrition", "sustainable agriculture", "crop yield", "agricultural productivity", "food supply"], aliases: ["famine", "undernutrition", "smallholder", "agroecology"] },
+      { id: 3, code: "SDG 3", name: "Good Health and Well-being", officialName: "Ensure healthy lives and promote well-being for all at all ages", coreTerms: ["public health", "healthcare", "disease prevention", "mortality", "mental health", "maternal health", "infectious disease", "well-being"], aliases: ["health equity", "epidemiology", "clinical", "patient outcomes"] },
+      { id: 4, code: "SDG 4", name: "Quality Education", officialName: "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all", coreTerms: ["quality education", "learning outcomes", "inclusive education", "lifelong learning", "teacher training", "educational equity", "STEM education", "curriculum"], aliases: ["pedagogy", "student achievement", "digital learning", "education policy"] },
+      { id: 5, code: "SDG 5", name: "Gender Equality", officialName: "Achieve gender equality and empower all women and girls", coreTerms: ["gender equality", "women empowerment", "gender equity", "gender-based violence", "female participation", "women's rights", "gender gap", "sexual harassment"], aliases: ["women in leadership", "female labor", "gender discrimination"] },
+      { id: 6, code: "SDG 6", name: "Clean Water and Sanitation", officialName: "Ensure availability and sustainable management of water and sanitation for all", coreTerms: ["water quality", "clean water", "sanitation", "wastewater treatment", "drinking water", "water pollution", "water resources", "water management"], aliases: ["water scarcity", "sewage", "groundwater", "river basin"] },
+      { id: 7, code: "SDG 7", name: "Affordable and Clean Energy", officialName: "Ensure access to affordable, reliable, sustainable and modern energy for all", coreTerms: ["renewable energy", "clean energy", "energy efficiency", "solar energy", "wind energy", "energy access", "smart grid", "bioenergy"], aliases: ["photovoltaic", "decarbonized energy", "electricity access", "energy transition"] },
+      { id: 8, code: "SDG 8", name: "Decent Work and Economic Growth", officialName: "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all", coreTerms: ["decent work", "economic growth", "employment", "labor productivity", "workplace safety", "sustainable tourism", "inclusive growth", "youth employment"], aliases: ["labour market", "job creation", "occupational health", "informal employment"] },
+      { id: 9, code: "SDG 9", name: "Industry, Innovation and Infrastructure", officialName: "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation", coreTerms: ["sustainable infrastructure", "industrial innovation", "resilient infrastructure", "inclusive industrialization", "green manufacturing", "technology innovation", "transport infrastructure", "digital infrastructure"], aliases: ["industry 4.0", "manufacturing sustainability", "infrastructure resilience"] },
+      { id: 10, code: "SDG 10", name: "Reduced Inequalities", officialName: "Reduce inequality within and among countries", coreTerms: ["inequality", "social inclusion", "income inequality", "discrimination", "migration", "equity", "vulnerable groups", "accessibility"], aliases: ["social mobility", "minority groups", "redistribution", "inclusive policy"] },
+      { id: 11, code: "SDG 11", name: "Sustainable Cities and Communities", officialName: "Make cities and human settlements inclusive, safe, resilient and sustainable", coreTerms: ["sustainable cities", "urban resilience", "smart city", "air pollution", "public transport", "urban planning", "disaster risk", "affordable housing"], aliases: ["urban sustainability", "walkability", "city planning", "community resilience"] },
+      { id: 12, code: "SDG 12", name: "Responsible Consumption and Production", officialName: "Ensure sustainable consumption and production patterns", coreTerms: ["circular economy", "sustainable consumption", "responsible production", "waste reduction", "recycling", "life cycle assessment", "material efficiency", "food waste"], aliases: ["LCA", "supply chain sustainability", "resource efficiency", "eco-design"] },
+      { id: 13, code: "SDG 13", name: "Climate Action", officialName: "Take urgent action to combat climate change and its impacts", coreTerms: ["climate change", "global warming", "greenhouse gas", "carbon footprint", "climate mitigation", "climate adaptation", "carbon emissions", "climate risk"], aliases: ["GHG", "CO2", "net zero", "carbon neutrality"] },
+      { id: 14, code: "SDG 14", name: "Life Below Water", officialName: "Conserve and sustainably use the oceans, seas and marine resources for sustainable development", coreTerms: ["marine biodiversity", "ocean pollution", "marine ecosystem", "fisheries", "aquaculture", "coastal management", "plastic pollution", "coral reef"], aliases: ["blue economy", "marine conservation", "ocean acidification", "fishery management"] },
+      { id: 15, code: "SDG 15", name: "Life on Land", officialName: "Protect, restore and promote sustainable use of terrestrial ecosystems", coreTerms: ["biodiversity", "forest conservation", "land degradation", "ecosystem restoration", "deforestation", "terrestrial ecosystem", "soil conservation", "habitat loss"], aliases: ["wildlife conservation", "protected areas", "reforestation", "desertification"] },
+      { id: 16, code: "SDG 16", name: "Peace, Justice and Strong Institutions", officialName: "Promote peaceful and inclusive societies, provide access to justice for all and build effective institutions", coreTerms: ["peace", "justice", "strong institutions", "governance", "corruption", "human rights", "rule of law", "violence prevention"], aliases: ["institutional quality", "public accountability", "conflict resolution", "legal empowerment"] },
+      { id: 17, code: "SDG 17", name: "Partnerships for the Goals", officialName: "Strengthen the means of implementation and revitalize the global partnership for sustainable development", coreTerms: ["global partnership", "sustainable development cooperation", "capacity building", "technology transfer", "development finance", "multi-stakeholder partnership", "international cooperation", "SDG implementation"], aliases: ["policy coherence", "public private partnership", "development assistance", "cross-sector collaboration"] }
+    ];
+
+    function ensureCoreIndex() {
+      if (!window.SDG_CORE_INDEX || !window.SDG_CORE_INDEX.length) {
+        window.SDG_CORE_INDEX = FALLBACK_CORE_INDEX.map(item => ({ ...item, source: "Embedded fallback core index + Elsevier 2023 SDG Mapping references" }));
+      }
+    }
+
+    const el = {
+      rawInput: document.getElementById("rawInput"),
+      title: document.getElementById("title"),
+      abstract: document.getElementById("abstract"),
+      keywords: document.getElementById("keywords"),
+      parseBtn: document.getElementById("parseBtn"),
+      checkBtn: document.getElementById("checkBtn"),
+      sampleBtn: document.getElementById("sampleBtn"),
+      clearBtn: document.getElementById("clearBtn"),
+      copyBtn: document.getElementById("copyBtn"),
+      summary: document.getElementById("summary"),
+      review: document.getElementById("review"),
+      srStatus: document.getElementById("srStatus")
+    };
+
+    function parseInput(rawText) {
+      const raw = (rawText || "").replace(/\r/g, "").trim();
+      if (!raw) return { title: "", abstract: "", keywords: "" };
+
+      const tagged = {};
+      const patterns = [
+        ["title", /(?:^|\n)\s*(?:title|paper title|\u8ad6\u6587\u984c\u76ee|\u984c\u76ee)\s*[:\uFF1A]\s*/i],
+        ["abstract", /(?:^|\n)\s*(?:abstract|\u6458\u8981)\s*[:\uFF1A]\s*/i],
+        ["keywords", /(?:^|\n)\s*(?:keywords?|key words|\u95dc\u9375\u5b57)\s*[:\uFF1A]\s*/i]
+      ];
+
+      const hits = patterns
+        .map(([name, regex]) => {
+          const match = raw.match(regex);
+          return match ? { name, index: match.index, length: match[0].length } : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.index - b.index);
+
+      if (hits.length) {
+        hits.forEach((hit, i) => {
+          const start = hit.index + hit.length;
+          const end = i + 1 < hits.length ? hits[i + 1].index : raw.length;
+          tagged[hit.name] = raw.slice(start, end).trim();
+        });
+      }
+
+      if (tagged.title || tagged.abstract || tagged.keywords) {
+        return {
+          title: tagged.title || "",
+          abstract: tagged.abstract || "",
+          keywords: tagged.keywords || ""
+        };
+      }
+
+      const blocks = raw.split(/\n\s*\n/).map(s => s.trim()).filter(Boolean);
+      if (blocks.length === 1) {
+        const lines = raw.split("\n").map(s => s.trim()).filter(Boolean);
+        return {
+          title: lines[0] || "",
+          abstract: lines.slice(1, -1).join(" ") || "",
+          keywords: lines.length > 1 ? lines[lines.length - 1] : ""
+        };
+      }
+
+      const title = blocks[0] || "";
+      const last = blocks[blocks.length - 1] || "";
+      const lastLooksLikeKeywords = /[;,]/.test(last) || last.split(/\s+/).length < 14;
+      return {
+        title,
+        abstract: blocks.slice(1, lastLooksLikeKeywords ? -1 : undefined).join("\n\n"),
+        keywords: lastLooksLikeKeywords ? last : ""
+      };
+    }
+
+    function normalizeText(text) {
+      return (text || "")
+        .toLowerCase()
+        .replace(/[\u2018\u2019]/g, "'")
+        .replace(/[\u201C\u201D]/g, '"')
+        .replace(/[\u2010-\u2015]/g, "-")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function keywordCount(keywords) {
+      return (keywords || "")
+        .split(/[;,]\s*|\n+/)
+        .map(s => s.trim())
+        .filter(s => s && !weakTerms.includes(normalizeText(s))).length;
+    }
+
+    function termRegex(term) {
+      const cleaned = normalizeText(term).replace(/\*/g, "");
+      if (!cleaned || cleaned.length < 3) return null;
+      const escaped = cleaned.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`, "i");
+    }
+
+    function containsTerm(text, term) {
+      const regex = termRegex(term);
+      return regex ? regex.test(normalizeText(text)) : false;
+    }
+
+    function fieldText(parsedPaper, field) {
+      return parsedPaper[field] || "";
+    }
+
+    function preScreenSdgs(parsedPaper) {
+      ensureCoreIndex();
+      const combined = {
+        title: normalizeText(parsedPaper.title),
+        abstract: normalizeText(parsedPaper.abstract),
+        keywords: normalizeText(parsedPaper.keywords)
+      };
+
+      return (window.SDG_CORE_INDEX || []).map(goal => {
+        const matched = [];
+        let score = 0;
+        const terms = [...(goal.coreTerms || []), ...(goal.aliases || [])];
+        terms.forEach(term => {
+          ["title", "keywords", "abstract"].forEach(field => {
+            if (containsTerm(combined[field], term)) {
+              const termScore = (goal.coreTerms || []).includes(term) ? 3 : 2;
+              score += termScore * FIELD_WEIGHTS[field];
+              matched.push({ term, field, source: "core" });
+            }
+          });
+        });
+        return { ...goal, score, matched };
+      }).sort((a, b) => b.score - a.score);
+    }
+
+    function loadSdgKeywordModule(sdgId) {
+      const id = Number(sdgId);
+      if (loadedModules.has(id) || (window.SDG_KEYWORDS && window.SDG_KEYWORDS[id])) {
+        loadedModules.add(id);
+        return Promise.resolve();
+      }
+      const padded = String(id).padStart(2, "0");
+      return new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        const timer = window.setTimeout(() => resolve(), 2500);
+        script.src = `assets/sdg-keywords/sdg-${padded}.js`;
+        script.onload = () => {
+          window.clearTimeout(timer);
+          loadedModules.add(id);
+          resolve();
+        };
+        script.onerror = () => {
+          window.clearTimeout(timer);
+          resolve();
+        };
+        document.head.appendChild(script);
+      });
+    }
+
+    function scoreWithLoadedKeywords(parsedPaper, sdgId) {
+      const module = window.SDG_KEYWORDS && window.SDG_KEYWORDS[sdgId];
+      const core = (window.SDG_CORE_INDEX || []).find(goal => goal.id === sdgId) || {};
+      if (!module) {
+        const fallback = preScreenSdgs(parsedPaper).find(goal => goal.id === sdgId) || { score: 0, matched: [] };
+        const matched = (fallback.matched || []).map(item => ({ ...item, source: "Core fallback index" }));
+        const fieldScores = { title: 0, abstract: 0, keywords: 0 };
+        matched.forEach(item => fieldScores[item.field] += FIELD_WEIGHTS[item.field] || 1);
+        return { ...core, score: fallback.score, matched, negativeMatches: [], fieldScores, source: "Core fallback index" };
+      }
+
+      const fieldScores = { title: 0, abstract: 0, keywords: 0 };
+      const matched = [];
+      const seen = new Set();
+
+      (module.terms || []).forEach(item => {
+        const term = item.term;
+        if (!term || term.length < 3) return;
+        ["title", "keywords", "abstract"].forEach(field => {
+          if (item.fields && !item.fields.includes(field)) return;
+          if (containsTerm(fieldText(parsedPaper, field), term)) {
+            const key = `${field}:${normalizeText(term)}`;
+            if (seen.has(key)) return;
+            seen.add(key);
+            const value = (item.weight || 1) * FIELD_WEIGHTS[field];
+            fieldScores[field] += value;
+            matched.push({ term, field, weight: item.weight || 1, source: "Elsevier 2023 SDG Mapping" });
+          }
+        });
+      });
+
+      const negativeMatches = (module.negativeTerms || [])
+        .filter(term => containsTerm(`${parsedPaper.title} ${parsedPaper.abstract} ${parsedPaper.keywords}`, term))
+        .slice(0, 10);
+
+      const penalty = negativeMatches.length ? Math.min(10, negativeMatches.length * 2) : 0;
+      const score = Object.values(fieldScores).reduce((sum, value) => sum + value, 0) - penalty;
+
+      return {
+        ...core,
+        score,
+        matched,
+        negativeMatches,
+        fieldScores,
+        source: module.source
+      };
+    }
+
+    function determineBestFit(scoredSdgs) {
+      const sorted = [...scoredSdgs].sort((a, b) => b.score - a.score);
+      const primary = sorted[0] || null;
+      const secondary = sorted.slice(1, 4).filter(item => primary && item.score >= Math.max(5, primary.score * 0.45));
+      return { primary, secondary };
+    }
+
+    function detectAbstractSignals(abstract) {
+      const text = normalizeText(abstract);
+      return Object.entries(abstractSignals)
+        .filter(([, terms]) => terms.some(term => text.includes(term)))
+        .map(([type]) => type);
+    }
+
+    function confidenceFrom(primary, secondary) {
+      if (!primary || primary.score <= 0) return "Low";
+      if (primary.score >= 30 && (!secondary.length || primary.score > secondary[0].score * 1.35)) return "High";
+      if (primary.score >= 12) return "Medium";
+      return "Low";
+    }
+
+    function determinePassFail(parsedPaper, bestFit) {
+      const reasons = [];
+      const primary = bestFit.primary;
+      const matched = primary ? primary.matched || [] : [];
+      const titleMatches = matched.filter(m => m.field === "title").length;
+      const keywordMatches = matched.filter(m => m.field === "keywords").length;
+      const abstractMatches = matched.filter(m => m.field === "abstract").length;
+      const signals = detectAbstractSignals(parsedPaper.abstract);
+      const kwCount = keywordCount(parsedPaper.keywords);
+      const overclaims = overclaimingPatterns.filter(pattern => containsTerm(parsedPaper.abstract, pattern) || containsTerm(parsedPaper.title, pattern));
+      const negativeCount = primary ? (primary.negativeMatches || []).length : 0;
+
+      if (!parsedPaper.title.trim()) reasons.push("Title is missing.");
+      if (!parsedPaper.abstract.trim()) reasons.push("Abstract is missing.");
+      if (!parsedPaper.keywords.trim()) reasons.push("Keywords are missing.");
+      if (!primary || primary.score < PASS_THRESHOLDS.finalScore) reasons.push("Best-fit SDG score is below the PASS threshold.");
+      if (titleMatches + keywordMatches < PASS_THRESHOLDS.titleOrKeywordMatch) reasons.push("Title or keywords must include at least one SDG-detectable Elsevier-derived term.");
+      if (abstractMatches < PASS_THRESHOLDS.abstractMatch) reasons.push("Abstract must include at least one SDG-related term.");
+      if (kwCount < PASS_THRESHOLDS.minKeywordCount) reasons.push("Keywords should include at least three specific terms.");
+      if (signals.length < PASS_THRESHOLDS.minAbstractSignalTypes) reasons.push("Abstract should show at least three of: purpose, method, results, and sustainability impact.");
+      if (negativeCount && (!primary || primary.score < 25 || titleMatches + keywordMatches === 0)) {
+        reasons.push("Potential exclusion terms were detected and may reduce SDG relevance.");
+      }
+      if (overclaims.length) reasons.push("Possible overclaiming language was detected.");
+
+      return {
+        decision: reasons.length ? "FAIL" : "PASS",
+        reasons,
+        details: { titleMatches, keywordMatches, abstractMatches, signals, keywordCount: kwCount, overclaims }
+      };
+    }
+
+    function buildSuggestions(parsedPaper, bestFit, decision) {
+      const suggestions = [];
+      const primary = bestFit.primary;
+      const matched = primary ? primary.matched || [] : [];
+      const name = primary ? `${primary.code} ${primary.name}` : "the best-fit SDG";
+      const isFail = decision.decision === "FAIL";
+
+      if (!parsedPaper.title.trim()) {
+        suggestions.push("Add a clear academic title that identifies the research topic and sustainability context.");
+      } else if (isFail && !matched.some(m => m.field === "title")) {
+        suggestions.push(`Revise the title to include a precise term connected to ${name}, without overstating the study's contribution.`);
+      }
+
+      if (!parsedPaper.abstract.trim()) {
+        suggestions.push("Add an abstract that includes purpose, method, results, and sustainability impact.");
+      } else {
+        const signals = detectAbstractSignals(parsedPaper.abstract);
+        if (isFail && signals.length < 3) {
+          suggestions.push("Strengthen the abstract by explicitly stating the research purpose, method, results, and sustainability or SDG impact.");
+        }
+        if (isFail && !matched.some(m => m.field === "abstract")) {
+          suggestions.push(`Add one or two concrete ${name} terms in the abstract and explain how the findings relate to that SDG.`);
+        }
+      }
+
+      if (!parsedPaper.keywords.trim() || keywordCount(parsedPaper.keywords) < 3) {
+        suggestions.push("Provide at least three specific keywords separated by semicolons.");
+      }
+      if (isFail && !matched.some(m => m.field === "keywords")) {
+        const examples = matched.slice(0, 3).map(m => m.term);
+        const fallback = primary ? (primary.coreTerms || []).slice(0, 3) : [];
+        const terms = examples.length ? examples : fallback;
+        suggestions.push(`Add SDG-detectable keywords such as ${terms.join(", ")}.`);
+      }
+
+      if (decision.reasons.some(reason => reason.includes("overclaiming"))) {
+        suggestions.push("Replace absolute claims with evidence-based wording that matches the study's data and scope.");
+      }
+
+      if (!suggestions.length || !isFail) {
+        suggestions.length = 0;
+        suggestions.push("The paper is SDG-detectable by this tool. Keep title, abstract, and keywords aligned with the stated SDG contribution.");
+      }
+
+      latestSuggestions = suggestions;
+      return suggestions;
+    }
+
+    function issueTermsForField(fieldName, parsedPaper, result) {
+      const terms = [];
+      const text = normalizeText(parsedPaper[fieldName]);
+      if (!text) return terms;
+
+      weakTerms.forEach(term => {
+        if (containsTerm(text, term)) terms.push({ term, type: "issue" });
+      });
+
+      if (fieldName === "title" && !result.matchedTerms.title.length) {
+        parsedPaper.title.split(/\s+/).slice(0, 8).join(" ");
+      }
+
+      overclaimingPatterns.forEach(term => {
+        if (containsTerm(text, term)) terms.push({ term, type: "issue" });
+      });
+
+      return terms;
+    }
+
+    function buildHighlightedText(fieldName, text, issues, matchedTerms) {
+      if (!text) return `<span style="color: var(--red);">Missing ${fieldName}.</span>`;
+      const markers = [];
+      matchedTerms.forEach(term => markers.push({ term, className: "match" }));
+      issues.forEach(item => markers.push({ term: item.term, className: "issue" }));
+
+      let html = escapeHtml(text);
+      const uniqueMarkers = markers
+        .filter(m => m.term && m.term.length > 2)
+        .sort((a, b) => b.term.length - a.term.length)
+        .filter((m, index, arr) => arr.findIndex(x => normalizeText(x.term) === normalizeText(m.term)) === index)
+        .slice(0, 24);
+
+      uniqueMarkers.forEach(marker => {
+        const escapedTerm = escapeHtml(marker.term).replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\\\*/g, "\\w*");
+        const regex = new RegExp(`(^|[^a-zA-Z0-9])(${escapedTerm})(?=[^a-zA-Z0-9]|$)`, "gi");
+        html = html.replace(regex, `$1<mark class="${marker.className}">$2</mark>`);
+      });
+
+      return html;
+    }
+
+    function escapeHtml(text) {
+      return String(text || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function groupMatchedTerms(matched) {
+      const grouped = { title: [], abstract: [], keywords: [] };
+      (matched || []).forEach(item => {
+        if (!grouped[item.field]) return;
+        if (!grouped[item.field].some(term => normalizeText(term) === normalizeText(item.term))) {
+          grouped[item.field].push(item.term);
+        }
+      });
+      Object.keys(grouped).forEach(field => grouped[field] = grouped[field].slice(0, 10));
+      return grouped;
+    }
+
+    function renderResults(result) {
+      const primary = result.bestFit.primary;
+      const decisionClass = result.decision.decision.toLowerCase();
+      const loaded = [...loadedModules].sort((a, b) => a - b).map(id => `SDG ${id}`).join(", ") || "None";
+
+      el.summary.innerHTML = `
+        <div class="decision-card ${decisionClass}">
+          <div class="eyebrow">Decision</div>
+          <div class="decision-line">
+            <div class="decision ${decisionClass}">${result.decision.decision}</div>
+            <div class="confidence">Confidence: ${escapeHtml(result.confidence)}</div>
+          </div>
+          <div>${result.decision.reasons.length ? escapeHtml(result.decision.reasons[0]) : "Likely meets this tool's SDG-detectability criteria."}</div>
+        </div>
+
+        <div class="sdg-card">
+          <div class="eyebrow">Best-fit SDG</div>
+          ${primary ? `
+            <div class="sdg-main">
+              <div class="sdg-badge">${escapeHtml(primary.code)}</div>
+              <div>
+                <div class="sdg-name">${escapeHtml(primary.name)}</div>
+                <div class="sdg-official">${escapeHtml(primary.officialName || "")}</div>
+              </div>
+            </div>
+          ` : `<div class="empty">No SDG match detected.</div>`}
+          <div class="chips">
+            ${result.bestFit.secondary.map(item => `<span class="chip">${escapeHtml(item.code)} ${escapeHtml(item.name)} (${item.score.toFixed(1)})</span>`).join("") || `<span class="chip">No close secondary SDG</span>`}
+          </div>
+        </div>
+
+        <div class="load-status">Loaded Elsevier keyword modules: ${escapeHtml(loaded)}</div>
+
+        <div class="sdg-card">
+          <div class="eyebrow">Matched Elsevier-derived terms</div>
+          <div class="chips">
+            ${Object.values(result.matchedTerms).flat().slice(0, 18).map(term => `<span class="chip">${escapeHtml(term)}</span>`).join("") || `<span class="chip">No strong term matches</span>`}
+          </div>
+        </div>
+
+        <div class="sdg-card">
+          <div class="eyebrow">Reasons</div>
+          <ul class="suggestions">
+            ${(result.decision.reasons.length ? result.decision.reasons : ["No blocking issues found."]).map(reason => `<li>${escapeHtml(reason)}</li>`).join("")}
+          </ul>
+        </div>
+
+        <div class="sdg-card">
+          <div class="eyebrow">Suggestions</div>
+          <ul class="suggestions">
+            ${result.suggestions.map(item => `<li>${escapeHtml(item)}</li>`).join("")}
+          </ul>
+        </div>
+      `;
+
+      const fields = ["title", "abstract", "keywords"];
+      el.review.innerHTML = `<div class="review-section">${
+        fields.map(field => {
+          const issues = issueTermsForField(field, result.parsedPaper, result);
+          const marked = buildHighlightedText(field, result.parsedPaper[field], issues, result.matchedTerms[field] || []);
+          return `
+            <article class="review-card">
+              <h3>${field[0].toUpperCase() + field.slice(1)}</h3>
+              <div class="marked-text">${marked}</div>
+            </article>
+          `;
+        }).join("")
+      }</div>`;
+
+      el.srStatus.textContent = `Assessment complete. Decision ${result.decision.decision}.`;
+    }
+
+    async function checkPaper() {
+      const parsedPaper = {
+        title: el.title.value.trim(),
+        abstract: el.abstract.value.trim(),
+        keywords: el.keywords.value.trim()
+      };
+
+      if (!parsedPaper.title && !parsedPaper.abstract && !parsedPaper.keywords && el.rawInput.value.trim()) {
+        const parsed = parseInput(el.rawInput.value);
+        Object.assign(parsedPaper, parsed);
+        fillParsed(parsed);
+      }
+
+      el.summary.innerHTML = `<div class="empty">Analyzing SDG fit and loading Elsevier keyword modules...</div>`;
+      el.review.innerHTML = `<div class="empty">Preparing marked review...</div>`;
+
+      const pre = preScreenSdgs(parsedPaper);
+      const top = pre.slice(0, 3).filter(item => item.score > 0);
+      const firstScore = top[0] ? top[0].score : 0;
+      const toLoad = top.filter((item, index) => index === 0 || item.score >= firstScore * 0.7).map(item => item.id);
+
+      try {
+        await Promise.all(toLoad.map(loadSdgKeywordModule));
+      } catch (error) {
+        el.summary.innerHTML = `<div class="empty">${escapeHtml(error.message)}</div>`;
+        return;
+      }
+
+      const scored = toLoad.map(id => scoreWithLoadedKeywords(parsedPaper, id));
+      const bestFit = scored.length ? determineBestFit(scored) : { primary: null, secondary: [] };
+      const decision = determinePassFail(parsedPaper, bestFit);
+      const suggestions = buildSuggestions(parsedPaper, bestFit, decision);
+      const matchedTerms = groupMatchedTerms(bestFit.primary ? bestFit.primary.matched : []);
+      const confidence = confidenceFrom(bestFit.primary, bestFit.secondary);
+
+      renderResults({ parsedPaper, preScreened: pre, scored, bestFit, decision, suggestions, matchedTerms, confidence });
+    }
+
+    function fillParsed(parsed) {
+      el.title.value = parsed.title || "";
+      el.abstract.value = parsed.abstract || "";
+      el.keywords.value = parsed.keywords || "";
+    }
+
+    function loadSample() {
+      const sample = `Title:
+Carbon footprint assessment of renewable energy adoption in semiconductor manufacturing
+
+Abstract:
+This study evaluates greenhouse gas emissions and carbon footprint reductions associated with renewable energy adoption in semiconductor manufacturing. Using life-cycle assessment and plant-level electricity consumption data, we estimate emission reduction potential and discuss implications for climate change mitigation. Results show that renewable electricity procurement can substantially reduce Scope 2 emissions.
+
+Keywords:
+carbon footprint; greenhouse gas emissions; renewable energy; climate change mitigation; life-cycle assessment`;
+      el.rawInput.value = sample;
+      fillParsed(parseInput(sample));
+    }
+
+    el.parseBtn.addEventListener("click", () => fillParsed(parseInput(el.rawInput.value)));
+    el.checkBtn.addEventListener("click", checkPaper);
+    el.sampleBtn.addEventListener("click", loadSample);
+    el.clearBtn.addEventListener("click", () => {
+      el.rawInput.value = "";
+      el.title.value = "";
+      el.abstract.value = "";
+      el.keywords.value = "";
+      latestSuggestions = [];
+      el.summary.innerHTML = `<div class="empty">Run a check to see PASS/FAIL, best-fit SDG, matched terms, and revision advice.</div>`;
+      el.review.innerHTML = `<div class="empty">Marked title, abstract, and keywords will appear here.</div>`;
+    });
+    el.copyBtn.addEventListener("click", async () => {
+      const text = latestSuggestions.length ? latestSuggestions.map((s, i) => `${i + 1}. ${s}`).join("\n") : "No suggestions available yet.";
+      try {
+        await navigator.clipboard.writeText(text);
+        el.srStatus.textContent = "Suggestions copied.";
+      } catch {
+        el.srStatus.textContent = "Copy failed. Select the suggestions manually.";
+      }
+    });
+  </script>
+</body>
+</html>
