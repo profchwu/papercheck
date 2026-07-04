@@ -25130,6 +25130,20 @@ window.SDG_KEYWORDS[17] = {
       srStatus: document.getElementById("srStatus")
     };
 
+    function stripFieldLabel(text) {
+      return (text || "").replace(/^\s*(?:title|paper title|abstract|keywords?|key words|\u8ad6\u6587\u984c\u76ee|\u984c\u76ee|\u6458\u8981|\u95dc\u9375\u5b57)\s*[:\uFF1A]?\s*/i, "").trim();
+    }
+
+    function looksLikeKeywordBlock(text) {
+      const value = stripFieldLabel(text);
+      if (!value) return false;
+      const parts = value.split(/[;,\uFF1B\uFF0C]|\n+/).map(item => item.trim()).filter(Boolean);
+      const wordCount = value.split(/\s+/).filter(Boolean).length;
+      const hasSeparators = /[;,\uFF1B\uFF0C]/.test(value);
+      const mostlyShortItems = parts.length >= 3 && parts.every(item => item.split(/\s+/).length <= 8);
+      return hasSeparators || mostlyShortItems || wordCount <= 12;
+    }
+
     function parseInput(rawText) {
       const raw = (rawText || "").replace(/\r/g, "").trim();
       if (!raw) return { title: "", abstract: "", keywords: "" };
@@ -25165,23 +25179,40 @@ window.SDG_KEYWORDS[17] = {
         };
       }
 
-      const blocks = raw.split(/\n\s*\n/).map(s => s.trim()).filter(Boolean);
+      const blocks = raw.split(/\n\s*\n/).map(s => stripFieldLabel(s)).filter(Boolean);
       if (blocks.length === 1) {
         const lines = raw.split("\n").map(s => s.trim()).filter(Boolean);
+        if (lines.length >= 3) {
+          const lastLine = lines[lines.length - 1];
+          const lastIsKeywords = looksLikeKeywordBlock(lastLine);
+          return {
+            title: stripFieldLabel(lines[0]),
+            abstract: stripFieldLabel(lines.slice(1, lastIsKeywords ? -1 : undefined).join(" ")),
+            keywords: lastIsKeywords ? stripFieldLabel(lastLine) : ""
+          };
+        }
         return {
-          title: lines[0] || "",
-          abstract: lines.slice(1, -1).join(" ") || "",
-          keywords: lines.length > 1 ? lines[lines.length - 1] : ""
+          title: stripFieldLabel(lines[0] || ""),
+          abstract: stripFieldLabel(lines.slice(1).join(" ") || ""),
+          keywords: ""
         };
       }
 
-      const title = blocks[0] || "";
+      const title = stripFieldLabel(blocks[0] || "");
+      if (blocks.length === 2) {
+        return {
+          title,
+          abstract: looksLikeKeywordBlock(blocks[1]) ? "" : stripFieldLabel(blocks[1]),
+          keywords: looksLikeKeywordBlock(blocks[1]) ? stripFieldLabel(blocks[1]) : ""
+        };
+      }
+
       const last = blocks[blocks.length - 1] || "";
-      const lastLooksLikeKeywords = /[;,]/.test(last) || last.split(/\s+/).length < 14;
+      const lastLooksLikeKeywords = looksLikeKeywordBlock(last);
       return {
         title,
-        abstract: blocks.slice(1, lastLooksLikeKeywords ? -1 : undefined).join("\n\n"),
-        keywords: lastLooksLikeKeywords ? last : ""
+        abstract: stripFieldLabel(blocks.slice(1, lastLooksLikeKeywords ? -1 : 2).join("\n\n")),
+        keywords: lastLooksLikeKeywords ? stripFieldLabel(last) : stripFieldLabel(blocks.slice(2).join("\n"))
       };
     }
 
