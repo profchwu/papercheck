@@ -700,9 +700,9 @@
 
       const tagged = {};
       const patterns = [
-        ["title", /(?:^|\n)\s*(?:title|paper title|\u8ad6\u6587\u984c\u76ee|\u984c\u76ee)\s*[:\uFF1A]\s*/i],
-        ["abstract", /(?:^|\n)\s*(?:abstract|\u6458\u8981)\s*[:\uFF1A]\s*/i],
-        ["keywords", /(?:^|\n)\s*(?:keywords?|key words|\u95dc\u9375\u5b57)\s*[:\uFF1A]\s*/i]
+        ["title", /(?:^|\n)\s*(?:title|paper title|\u8ad6\u6587\u984c\u76ee|\u984c\u76ee)\s*[:\uFF1A]?\s*/i],
+        ["abstract", /(?:^|\n)\s*(?:abstract|\u6458\u8981)\s*[:\uFF1A]?\s*/i],
+        ["keywords", /(?:^|\n)\s*(?:keywords?|key words|\u95dc\u9375\u5b57)\s*[:\uFF1A]?\s*/i]
       ];
 
       const hits = patterns
@@ -714,10 +714,13 @@
         .sort((a, b) => a.index - b.index);
 
       if (hits.length) {
+        if (!hits.some(hit => hit.name === "title") && hits[0].index > 0) {
+          tagged.title = stripFieldLabel(raw.slice(0, hits[0].index));
+        }
         hits.forEach((hit, i) => {
           const start = hit.index + hit.length;
           const end = i + 1 < hits.length ? hits[i + 1].index : raw.length;
-          tagged[hit.name] = raw.slice(start, end).trim();
+          tagged[hit.name] = stripFieldLabel(raw.slice(start, end));
         });
       }
 
