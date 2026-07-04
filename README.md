@@ -1,119 +1,129 @@
-# NTHU Sustainability Paper Checker V1.0
+# 清華永續論文檢查工具 V1.0
 
 國立清華大學數理教育研究所 吳智鴻教授開發
 
-NTHU Sustainability Paper Checker is a static, browser-only web app for checking whether a paper title, abstract, and keywords are likely to be SDG-detectable for sustainability paper recognition review. The app is designed for GitHub Pages deployment and does not require a backend server, API key, database, or user login.
+本工具是一個純前端、可部署於 GitHub Pages 的網頁檢查程式，用來協助使用者初步判斷論文的題名、摘要與關鍵字是否具有足夠的 SDG 永續發展目標可辨識度。程式不需要後端伺服器、資料庫、API 金鑰或登入系統。
 
-Public site: https://profchwu.github.io/papercheck/
+公開網址：  
+https://profchwu.github.io/papercheck/
 
-## Important Notice
+GitHub repository：  
+https://github.com/profchwu/papercheck
 
-This tool is for reference only. PASS/FAIL reflects this tool's rule-based assessment using downloaded SDG mapping references. The final recognition decision must follow National Tsing Hua University's official review and standards.
+## 重要聲明
 
-## Main Features
+本工具的判斷結果僅供參考。畫面中的 `PASS` 或 `FAIL` 是依據本工具內建規則與下載整理後的 SDG 對應資料所產生的輔助判斷，最終採認結果仍須以國立清華大學正式審查與公告標準為準。
 
-- Paste title, abstract, and keywords together in one text box.
-- Automatically parses Title, Abstract, and Keywords with relaxed label detection.
-- Supports labels such as `Title`, `title`, `TITLE`, `Abstract`, `ABSTRACT`, `Keyword`, `Keywords`, and `Key words`.
-- Does not require colons after field labels.
-- Supports common layouts:
-  - first paragraph as title, second as abstract, third as keywords
-  - title before an `ABSTRACT` label
-  - `Keywords:` or `Keywords` at the end
-  - same-line labels such as `Title ... Abstract ... Keywords ...`
-- Checks all 17 SDG keyword modules derived from Elsevier 2023 SDG Mapping data.
-- Shows a clear `PASS` or `FAIL` decision.
-- Shows the best-fit SDG and secondary SDG candidates.
-- Highlights matched SDG terms and possible revision issues.
-- Provides field-level suggestions for title, abstract, and keywords.
+## 主要功能
 
-## Current Version
+- 可一次貼上論文的題名、摘要與關鍵字。
+- 自動拆分 `Title`、`Abstract`、`Keywords` 三個欄位。
+- 欄位標籤判斷採寬鬆規則：
+  - 支援 `Title`、`title`、`TITLE`
+  - 支援 `Abstract`、`abstract`、`ABSTRACT`
+  - 支援 `Keyword`、`Keywords`、`Key words`、`KEYWORDS`
+  - 不強制要求冒號
+  - 支援全形冒號、半形冒號、連字號與破折號
+- 支援常見貼上格式：
+  - 第一段為 Title，第二段為 Abstract，第三段為 Keywords
+  - Title 在 `ABSTRACT` 標籤之前
+  - 最後一段或最後一行為 `Keywords`
+  - 同一行連續出現 `Title ... Abstract ... Keywords ...`
+- 正式檢查時會比對 SDG 1 至 SDG 17 全部 Elsevier-derived keyword 模組。
+- 顯示明確的 `PASS` 或 `FAIL`。
+- 顯示最適合的 SDG 主題與可能的次要 SDG。
+- 顯示命中的 SDG 相關詞。
+- 對需要修改或補強的位置提供紅色標註。
+- 提供題名、摘要與關鍵字的修改建議。
 
-### V1.0 - Revised 2026-07-04
+## 目前版本
 
-- Added public title: `NTHU Sustainability Paper Checker V1.0`.
-- Added revision date: `Revised 2026-07-04`.
-- Added Chinese author attribution: `國立清華大學數理教育研究所 吳智鴻教授開發`.
-- Added English reference-only disclaimer.
-- Changed the final check flow to scan all 17 SDG keyword modules instead of only pre-screened SDGs.
-- Relaxed field parsing for Title, Abstract, and Keywords.
-- Fixed parsing when the title appears before an `ABSTRACT` label.
-- Added support for field labels without colons and with mixed casing.
-- Fixed handling of SDG modules whose exclusion terms are not arrays.
+### V1.0 - 修正日期：2026-07-04
 
-## Version History
+- 加入頁面標題：`NTHU Sustainability Paper Checker V1.0`。
+- 加入修正日期：`Revised 2026-07-04`。
+- 加入中文作者標示：`國立清華大學數理教育研究所 吳智鴻教授開發`。
+- 加入英文免責說明，強調結果僅供參考，最終仍以清華大學認定為準。
+- 將正式檢查流程改為掃描 SDG 1 至 SDG 17 全部 keyword 模組。
+- 放寬 Title、Abstract、Keywords 欄位解析規則。
+- 修正「Title 出現在 ABSTRACT 標籤之前」時無法正確抓取題名的問題。
+- 支援大小寫混用、無冒號、同一行欄位標籤等格式。
+- 修正部分 SDG 模組排除詞格式不同時可能造成中斷的問題。
 
-### Initial GitHub Pages App
+## 版本更新紀錄
 
-- Built a static HTML/CSS/JavaScript application for GitHub Pages.
-- Added one large paste box and editable Title, Abstract, and Keywords fields.
-- Added PASS/FAIL result panel, best-fit SDG display, matched terms, and red marked suggestions.
-- Added Elsevier-derived SDG keyword data modules.
+### 初始 GitHub Pages 版本
 
-### Field Parsing Improvements
+- 建立純 HTML/CSS/JavaScript 的靜態網頁工具。
+- 建立貼上區、Title、Abstract、Keywords 三個欄位。
+- 建立 PASS/FAIL 結果區、最佳 SDG 顯示、命中詞與紅色修正標註。
+- 建立 Elsevier-derived SDG keyword 模組。
 
-- Improved auto-detection for common paper formats.
-- Added paragraph-based parsing:
-  - first paragraph = Title
-  - second paragraph = Abstract
-  - third paragraph = Keywords
-- Added line-based fallback for inputs without blank lines.
+### 欄位解析改進
 
-### Attribution and Disclaimer Update
+- 增加段落式解析：
+  - 第一段為 Title
+  - 第二段為 Abstract
+  - 第三段為 Keywords
+- 增加無空白行時的行解析 fallback。
+- 改善混合格式貼上時的判斷。
 
-- Added developer attribution.
-- Added clearer English disclaimer that official recognition must follow NTHU standards.
+### 作者與免責聲明更新
 
-### V1.0 Full SDG Scan
+- 加入開發者標示。
+- 加入英文說明：本工具結果僅供參考，最終判定以清華大學為準。
 
-- Changed final scoring to check SDG 1 through SDG 17.
-- Updated the UI status text to `Checked Elsevier keyword modules`.
-- Confirmed sample sustainability education paper returns `PASS` and best-fit `SDG 4 Quality Education`.
+### V1.0 全 17 項 SDG 檢查
 
-## Test Example
+- 將正式檢查改為掃描全部 17 項 SDG。
+- 畫面文字改為 `Checked Elsevier keyword modules`。
+- 使用永續教育範例測試，結果為 `PASS`，最佳 SDG 為 `SDG 4 Quality Education`。
 
-The following paper sample was tested:
+## 測試範例
 
-Title:
+測試論文題名：
+
 `Combining experiential learning with digital game-based learning to enhance learning motivation, reduce cognitive load and increase acceptance of sustainable education`
 
-Keywords:
+測試關鍵字：
+
 `Experiential learning, Digital game-based learning, Sustainable education, Sustainable education game, Cognitive load, Motivation`
 
-Result:
+測試結果：
 
-- Decision: `PASS`
-- Best-fit SDG: `SDG 4 Quality Education`
-- All 17 SDG modules checked
-- Key matched terms: `education`, `learning`, `barrier`, `design`
+- 判定：`PASS`
+- 最適合 SDG：`SDG 4 Quality Education`
+- 已檢查 SDG 1 至 SDG 17 共 17 項
+- 主要命中詞：`education`、`learning`、`barrier`、`design`
 
-## Data Sources
+## 資料來源
 
-- Elsevier 2023 Sustainable Development Goals Mapping, DOI `10.17632/y2zyy9vwzy.1`, CC BY 4.0  
+- Elsevier 2023 Sustainable Development Goals Mapping，DOI：`10.17632/y2zyy9vwzy.1`，授權：CC BY 4.0  
   https://elsevier.digitalcommonsdata.com/datasets/y2zyy9vwzy/1
-- UN Sustainable Development Goals  
+- 聯合國永續發展目標  
   https://sdgs.un.org/goals
-- National Tsing Hua University SDGs  
+- 國立清華大學 SDGs  
   https://sdgs.nthu.edu.tw/
 
-## Files
+## 專案檔案
 
-- `index.html`: main static web app.
-- `assets/sdg-core-index.js`: lightweight SDG core index.
-- `assets/sdg-keywords/sdg-01.js` to `assets/sdg-keywords/sdg-17.js`: Elsevier-derived SDG keyword modules.
-- `README.md`: user-facing documentation and version history.
-- `SPEC.md`: program specification.
-- `Prompt.md`: summarized development prompt and process log.
-- `sources/references.md`: source reference notes.
+- `index.html`：主要網頁程式。
+- `assets/sdg-core-index.js`：SDG 核心索引資料。
+- `assets/sdg-keywords/sdg-01.js` 至 `assets/sdg-keywords/sdg-17.js`：17 項 SDG keyword 模組。
+- `README.md`：程式說明與版本紀錄。
+- `SPEC.md`：程式規格書。
+- `Prompt.md`：開發提示詞與過程彙整。
+- `sources/references.md`：資料來源紀錄。
 
-## Deployment
+## 部署方式
 
-The app is designed for GitHub Pages:
+本工具適合部署於 GitHub Pages。
 
-1. Put `index.html` and the `assets/` folder in the repository root.
-2. Enable GitHub Pages.
-3. Select branch `main` and folder `/ (root)`.
-4. Open the GitHub Pages URL.
+1. 將 `index.html` 與 `assets/` 放在 repository 根目錄。
+2. 進入 GitHub repository 的 Pages 設定。
+3. 選擇 `main` branch。
+4. 選擇 `/ (root)`。
+5. 儲存後開啟 GitHub Pages 網址。
 
-No build step is required.
+本工具不需要建置步驟。
 
