@@ -1,85 +1,131 @@
-# Program Specification
+# 程式規格書
 
-## Project
+## 專案名稱
 
+清華永續論文檢查工具 V1.0  
 NTHU Sustainability Paper Checker V1.0
 
-Developer attribution: 國立清華大學數理教育研究所 吳智鴻教授開發
+## 開發者標示
 
-Revision date: 2026-07-04
+國立清華大學數理教育研究所 吳智鴻教授開發
 
-## Objective
+## 修正日期
 
-Create a front-end-only HTML application that helps users evaluate whether a paper title, abstract, and keywords are likely to satisfy sustainability paper recognition expectations. The tool must show a clear PASS or FAIL result, identify the most suitable SDG, and provide revision suggestions with red marks for items that may need improvement.
+2026-07-04
 
-The result is advisory only. Official recognition must follow National Tsing Hua University's review and standards.
+## 專案目標
 
-## Platform Requirements
+本專案旨在建立一個純前端網頁工具，協助使用者初步檢查論文的題名、摘要與關鍵字是否具有 SDG 永續發展目標的可辨識度，並提供以下結果：
 
-- Must run with static front-end web technologies only.
-- Must be deployable on GitHub Pages.
-- Must not require a server, database, cloud function, API key, or external AI API.
-- Must keep user input in the browser.
-- Must use English as the primary interface language.
-- Must show author attribution in Chinese.
+- 明確的 `PASS` 或 `FAIL`
+- 最適合的 SDG 主題
+- 可能的次要 SDG 主題
+- 命中的 SDG 關鍵詞
+- 需要修改的紅色標註
+- 題名、摘要與關鍵字的修改建議
 
-## Input Requirements
+本工具僅提供輔助判斷，最終是否採認仍須以國立清華大學正式審查與公告標準為準。
 
-The app provides:
+## 平台與技術需求
 
-- One large paste box for combined title, abstract, and keywords.
-- Three editable fields:
+- 必須使用純前端技術：HTML、CSS、JavaScript。
+- 必須可部署於 GitHub Pages。
+- 不可依賴後端伺服器。
+- 不可依賴資料庫。
+- 不可依賴 API 金鑰。
+- 不可依賴 AI API。
+- 使用者輸入內容必須只在瀏覽器端處理。
+- 介面以英文為主。
+- 頁面需包含中文作者標示。
+
+## 輸入需求
+
+畫面需提供：
+
+- 一個大型文字框，可讓使用者一次貼上 Title、Abstract 與 Keywords。
+- 三個可編輯欄位：
   - Title
   - Abstract
   - Keywords
 
-### Field Parsing Rules
+## 欄位解析規格
 
-The parser must accept relaxed formats:
+程式需能辨識寬鬆格式，不要求使用者完全依照固定格式貼上。
 
-- Case-insensitive labels:
-  - `Title`, `title`, `TITLE`
-  - `Abstract`, `abstract`, `ABSTRACT`
-  - `Keyword`, `Keywords`, `Key words`, `KEYWORDS`
-- Optional punctuation:
-  - colon `:`
-  - full-width colon `：`
-  - hyphen `-`
-  - dash
-- Paragraph fallback:
-  - first paragraph = Title
-  - second paragraph = Abstract
-  - third paragraph = Keywords
-- Title-before-abstract format:
-  - text before `ABSTRACT` is treated as Title if no explicit Title label exists.
-- Same-line labels:
-  - `Title ... Abstract ... Keywords ...`
+### 支援的欄位標籤
 
-## SDG Data Requirements
+Title：
 
-The app uses:
+- `Title`
+- `title`
+- `TITLE`
+- `Paper Title`
+- `paper title`
 
-- UN SDG names and official goal statements.
-- Elsevier 2023 Sustainable Development Goals Mapping dataset.
-- 17 SDG keyword modules:
+Abstract：
+
+- `Abstract`
+- `abstract`
+- `ABSTRACT`
+
+Keywords：
+
+- `Keyword`
+- `Keywords`
+- `Key words`
+- `KEYWORDS`
+
+### 標點符號規則
+
+欄位標籤後方可以有或沒有：
+
+- 半形冒號 `:`
+- 全形冒號 `：`
+- 連字號 `-`
+- 破折號
+
+### 格式 fallback
+
+若沒有清楚標籤，程式需依照常見論文貼上格式判斷：
+
+- 第一段為 Title
+- 第二段為 Abstract
+- 第三段為 Keywords
+
+若文字只有換行、沒有空白段落：
+
+- 第一行為 Title
+- 最後一行若看起來像關鍵字，則作為 Keywords
+- 中間內容作為 Abstract
+
+若文字在 `ABSTRACT` 標籤之前有內容，且沒有明確 `Title` 標籤，則 `ABSTRACT` 前方內容需視為 Title。
+
+## SDG 資料需求
+
+程式使用下列資料：
+
+- 聯合國 17 項 SDG 名稱與官方目標文字。
+- Elsevier 2023 Sustainable Development Goals Mapping dataset。
+- 17 個 SDG keyword 模組：
   - `assets/sdg-keywords/sdg-01.js`
+  - `assets/sdg-keywords/sdg-02.js`
   - ...
   - `assets/sdg-keywords/sdg-17.js`
 
-Each keyword module stores:
+每一個 SDG keyword 模組需包含：
 
 - SDG id
 - SDG code
 - SDG name
-- source attribution
-- positive matching terms
-- optional negative/exclusion terms
+- 資料來源 attribution
+- 正向命中詞
+- 選用的排除詞或負向詞
 
-## Scoring Requirements
+## 檢查與評分規格
 
-The app checks all 17 SDG keyword modules during the final Check action.
+正式按下 `Check` 時，程式必須檢查 SDG 1 至 SDG 17 全部 keyword 模組，而不是只檢查預判最可能的 SDG。
 
-Field weights:
+### 欄位權重
 
 ```javascript
 const FIELD_WEIGHTS = {
@@ -89,7 +135,9 @@ const FIELD_WEIGHTS = {
 };
 ```
 
-PASS thresholds:
+Title 與 Keywords 的權重較高，因為這兩個欄位通常是 SDG 檢索與採認判斷的重要訊號。
+
+### PASS 門檻
 
 ```javascript
 const PASS_THRESHOLDS = {
@@ -101,94 +149,98 @@ const PASS_THRESHOLDS = {
 };
 ```
 
-The app evaluates:
+### 檢查項目
 
-- matched terms in title
-- matched terms in abstract
-- matched terms in keywords
-- abstract signals:
-  - purpose
-  - method
-  - result
-  - sustainability impact
-- keyword count
-- exclusion terms
-- possible overclaiming language
+程式需檢查：
 
-## Output Requirements
+- Title 是否包含 SDG 可辨識詞。
+- Abstract 是否包含 SDG 可辨識詞。
+- Keywords 是否包含 SDG 可辨識詞。
+- Keywords 是否至少有 3 個具體詞。
+- Abstract 是否包含以下訊號：
+  - 研究目的
+  - 方法
+  - 結果
+  - 永續或 SDG 影響
+- 是否出現排除詞或可能降低 SDG 關聯性的詞。
+- 是否出現過度宣稱語句。
 
-The result panel must display:
+## 輸出規格
 
-- Decision: `PASS` or `FAIL`
+結果區需顯示：
+
+- `PASS` 或 `FAIL`
 - Confidence
 - Best-fit SDG
-- Secondary SDG candidates, if any
+- Secondary SDG candidates
 - Checked Elsevier keyword modules
 - Matched Elsevier-derived terms
-- Reasons for FAIL, if any
-- Suggestions
+- FAIL 的原因
+- 修改建議
 
-The marked review panel must display:
+標註區需顯示：
 
 - Title review
 - Abstract review
 - Keywords review
-- green marks for matched SDG terms
-- red marks for issues or missing content
+- 綠色標註：命中的 SDG 詞
+- 紅色標註：需要修改、補強或注意的內容
 
-## UI Requirements
+## 介面規格
 
-- Polished, responsive layout.
-- Desktop: two-column workspace.
-- Mobile: single-column layout.
-- No backend or landing page.
-- Clear buttons:
+- 版面需清楚、精美且可讀。
+- 桌機版採兩欄式：
+  - 左側輸入
+  - 右側結果
+- 手機版採單欄式。
+- 按鈕包含：
   - Parse
   - Check
   - Load sample
   - Clear
   - Copy suggestions
-- Text must fit in containers across screen sizes.
-- Results must not rely on color alone.
+- 結果不可只依賴顏色，需有文字標示。
+- 文字不可超出容器。
+- 不製作行銷式 landing page，開啟後直接是可使用的工具。
 
-## Source Attribution Requirements
+## 資料來源標示
 
-Footer and documentation must cite:
+頁尾與文件需列出：
 
-- Elsevier 2023 Sustainable Development Goals Mapping, DOI `10.17632/y2zyy9vwzy.1`, CC BY 4.0.
-- UN Sustainable Development Goals.
-- National Tsing Hua University SDGs.
+- Elsevier 2023 Sustainable Development Goals Mapping，DOI：`10.17632/y2zyy9vwzy.1`，CC BY 4.0。
+- 聯合國永續發展目標。
+- 國立清華大學 SDGs。
 
-## Known Limitations
+## 已知限制
 
-- This is a rule-based checker, not an official NTHU review system.
-- It cannot guarantee paper recognition.
-- Elsevier SDG mapping terms are used as reference signals, not as the sole official standard.
-- Some terms may match multiple SDGs.
-- Human review is still required for final interpretation.
+- 本工具是 rule-based checker，不是清華大學官方審查系統。
+- 本工具不能保證論文一定被採認。
+- Elsevier SDG mapping terms 是參考訊號，不等同於唯一官方標準。
+- 某些詞可能同時對應多個 SDG。
+- 最終解釋仍需人工審查。
 
-## Verification Cases
+## 驗證案例
 
-### Case 1: Sustainability Education Paper
+### 案例一：永續教育論文
 
-Expected result:
+預期結果：
 
-- PASS
-- Best-fit SDG: SDG 4 Quality Education
-- All 17 SDGs checked
+- `PASS`
+- 最適合 SDG：`SDG 4 Quality Education`
+- 需檢查全部 17 項 SDG
 
-### Case 2: Climate Paper
+### 案例二：氣候變遷論文
 
-Expected result:
+預期結果：
 
-- PASS
-- Best-fit SDG: SDG 13 Climate Action
+- `PASS`
+- 最適合 SDG：`SDG 13 Climate Action`
 
-### Case 3: Generic Technical Paper
+### 案例三：過於一般的技術論文
 
-Expected result:
+預期結果：
 
-- FAIL
-- low SDG detectability
-- suggestions to add specific SDG terms
+- `FAIL`
+- SDG 可辨識度低
+- 建議加入更具體的 SDG 相關題名、摘要或關鍵字
 
