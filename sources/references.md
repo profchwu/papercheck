@@ -10,6 +10,9 @@ This project uses public, downloaded reference material to support browser-side 
 - License: CC BY 4.0
 - Local query files: `sources/elsevier-sdg-2023/queries/`
 - Local description/keyphrase files: `sources/elsevier-sdg-2023/descriptions/`
+- Public app files: transformed and simplified browser-side modules under `assets/sdg-keywords/`
+- Modification notice: terms were extracted, simplified, weighted, and converted into JavaScript modules for rule-based browser matching.
+- No endorsement: attribution does not imply endorsement by Elsevier.
 
 ## Institutional Context
 
@@ -43,3 +46,5 @@ This project uses public, downloaded reference material to support browser-side 
 ## Important Disclaimer
 
 The checker is not an official National Tsing Hua University decision system. Its PASS/FAIL result reflects only this rule-based browser tool.
+
+Raw downloaded source archives, website snapshots, PDFs, and original query files should not be committed to the public GitHub Pages repository. The public repository should retain only the transformed app modules and this source attribution record.

@@ -2,8 +2,8 @@
 
 ## 專案名稱
 
-清華永續論文檢查工具 V1.0  
-NTHU Sustainability Paper Checker V1.0
+清華永續論文檢查工具 V1.1  
+NTHU Sustainability Paper Checker V1.1
 
 ## 開發者標示
 
@@ -11,7 +11,7 @@ NTHU Sustainability Paper Checker V1.0
 
 ## 修正日期
 
-2026-07-04
+2026-07-05
 
 ## 專案目標
 
@@ -37,6 +37,7 @@ NTHU Sustainability Paper Checker V1.0
 - 使用者輸入內容必須只在瀏覽器端處理。
 - 介面以英文為主。
 - 頁面需包含中文作者標示。
+- 頁面需明確標示本工具為 independent reference tool，並非國立清華大學官方審查系統。
 
 ## 輸入需求
 
@@ -121,6 +122,24 @@ Keywords：
 - 正向命中詞
 - 選用的排除詞或負向詞
 
+### Elsevier query 轉換規格
+
+資料轉換工具 `tools/build_sdg_data.ps1` 需支援下列 Elsevier query 格式：
+
+- `TITLE-ABS-KEY(...)`
+- `TITLE-ABS(...)`
+- `AUTHKEY(...)`
+- `TITLE(...)`
+- 引號詞，例如 `"renewable energy"`
+- 大括號詞，例如 `{ODA}`
+
+轉換時需注意：
+
+- 只將真正位於 `NOT (...)` 範圍內的詞列為 negative terms。
+- 不可因為 query 中較早出現局部 `AND NOT (...)`，就把後續全部 query 誤判為排除詞。
+- SDG 1 至 SDG 17 都必須產生可比對的正向 terms。
+- 轉換後資料需保留 Elsevier SDG Mapping attribution 與 CC BY 4.0 授權標示。
+
 ## 檢查與評分規格
 
 正式按下 `Check` 時，程式必須檢查 SDG 1 至 SDG 17 全部 keyword 模組，而不是只檢查預判最可能的 SDG。
@@ -178,6 +197,10 @@ const PASS_THRESHOLDS = {
 - FAIL 的原因
 - 修改建議
 
+若最佳 SDG 分數低於 `PASS_THRESHOLDS.finalScore`，結果區不可把低分 SDG 顯示為可靠的 Best-fit SDG，需顯示：
+
+`No reliable SDG match detected.`
+
 標註區需顯示：
 
 - Title review
@@ -198,7 +221,13 @@ const PASS_THRESHOLDS = {
   - Check
   - Load sample
   - Clear
-  - Copy suggestions
+- Copy suggestions
+- 頁面最上方中間需顯示兩個英文指標：
+  - `Checks`
+  - `Page views`
+- `Checks` 需在使用者按下 `Check` 時增加。
+- `Page views` 需在頁面載入時增加。
+- 兩個指標可使用瀏覽器 `localStorage` 本機累計，不需伺服器統計。
 - 結果不可只依賴顏色，需有文字標示。
 - 文字不可超出容器。
 - 不製作行銷式 landing page，開啟後直接是可使用的工具。
@@ -210,6 +239,19 @@ const PASS_THRESHOLDS = {
 - Elsevier 2023 Sustainable Development Goals Mapping，DOI：`10.17632/y2zyy9vwzy.1`，CC BY 4.0。
 - 聯合國永續發展目標。
 - 國立清華大學 SDGs。
+- `NOTICE.md` 需列出第三方資料授權、改作說明、非官方聲明與隱私說明。
+
+## 法律與隱私聲明規格
+
+網站與文件需明確說明：
+
+- 本工具為獨立開發之學術參考工具。
+- 本工具不是國立清華大學官方審查系統。
+- `PASS`、`FAIL`、Best-fit SDG 與修改建議均為 rule-based suggestions。
+- 最終採認結果必須以國立清華大學正式公告、正式規範與正式審查為準。
+- Elsevier SDG terms 為依據 CC BY 4.0 授權資料整理、轉換、簡化後使用。
+- Attribution does not imply endorsement by Elsevier, the United Nations, or National Tsing Hua University.
+- 使用者貼上的論文 title、abstract 與 keywords 僅在瀏覽器本機分析，不由本工具上傳到伺服器。
 
 ## 已知限制
 
@@ -242,5 +284,14 @@ const PASS_THRESHOLDS = {
 
 - `FAIL`
 - SDG 可辨識度低
+- 顯示 `No reliable SDG match detected.`
 - 建議加入更具體的 SDG 相關題名、摘要或關鍵字
 
+## V1.1 驗證重點
+
+- 永續教育範例需正確解析 Title、Abstract、Keywords。
+- 永續教育範例預期為 `PASS`，Best-fit SDG 為 `SDG 4 Quality Education`。
+- lowercase labels、無冒號、段落 fallback 需可正確解析。
+- 氣候變遷與再生能源範例預期為 `PASS`，Best-fit SDG 為 `SDG 13 Climate Action`。
+- 弱相關範例預期為 `FAIL`，且顯示 `No reliable SDG match detected.`。
+- SDG 1 至 SDG 17 的 keyword modules 均需載入且包含正向 terms。

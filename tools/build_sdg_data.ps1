@@ -35,23 +35,8 @@ function Convert-ToJsStringArray($items) {
 function Get-QueryTerms($path) {
   $text = Get-Content $path -Raw
   $terms = New-Object System.Collections.Generic.List[string]
-  $negative = New-Object System.Collections.Generic.List[string]
-  $notIndex = $text.IndexOf(" NOT ")
-  $positiveText = if ($notIndex -ge 0) { $text.Substring(0, $notIndex) } else { $text }
-  $negativeText = if ($notIndex -ge 0) { $text.Substring($notIndex) } else { "" }
 
-  foreach ($m in [regex]::Matches($positiveText, '(?:TITLE-ABS|AUTHKEY)\("([^"]+)"\)')) {
-    $term = $m.Groups[1].Value.Trim()
-    if ($term.Length -ge 4 -and $term -notmatch '^[0-9\s\W]+$') {
-      $terms.Add($term)
-    }
-  }
-  foreach ($m in [regex]::Matches($negativeText, '(?:TITLE-ABS|AUTHKEY)\("([^"]+)"\)')) {
-    $term = $m.Groups[1].Value.Trim()
-    if ($term.Length -ge 4 -and $term -notmatch '^[0-9\s\W]+$') {
-      $negative.Add($term)
-    }
-  }
+  foreach ($term in Get-FieldedTerms $text $false) { $terms.Add($term) }
 
   $extracted = $terms |
     ForEach-Object { $_.Trim() } |
@@ -66,6 +51,57 @@ function Get-QueryTerms($path) {
     }
 
   return @($extracted)
+}
+
+function Get-NegatedSpans($text) {
+  $spans = @()
+  foreach ($m in [regex]::Matches($text, '(?i)\bNOT\s*\(')) {
+    $open = $text.IndexOf('(', $m.Index)
+    if ($open -lt 0) { continue }
+    $depth = 0
+    for ($i = $open; $i -lt $text.Length; $i++) {
+      $ch = $text[$i]
+      if ($ch -eq '(') { $depth++ }
+      elseif ($ch -eq ')') {
+        $depth--
+        if ($depth -eq 0) {
+          $spans += [pscustomobject]@{ Start = $m.Index; End = $i }
+          break
+        }
+      }
+    }
+  }
+  return $spans
+}
+
+function Test-InSpans($index, $spans) {
+  foreach ($span in $spans) {
+    if ($index -ge $span.Start -and $index -le $span.End) { return $true }
+  }
+  return $false
+}
+
+function Get-FieldedTerms($text, $negatedOnly = $false) {
+  $values = New-Object System.Collections.Generic.List[string]
+  $spans = Get-NegatedSpans $text
+  $fieldCallPattern = '(?is)(?:TITLE-ABS-KEY|TITLE-ABS|AUTHKEY|TITLE)\((?<body>[^)]*)\)'
+
+  foreach ($call in [regex]::Matches($text, $fieldCallPattern)) {
+    $isNegated = Test-InSpans $call.Index $spans
+    if ($negatedOnly -and -not $isNegated) { continue }
+    if (-not $negatedOnly -and $isNegated) { continue }
+
+    $body = $call.Groups["body"].Value
+    foreach ($m in [regex]::Matches($body, '"([^"]+)"|\{([^}]+)\}')) {
+      $term = if ($m.Groups[1].Success) { $m.Groups[1].Value } else { $m.Groups[2].Value }
+      $term = $term.Trim()
+      if ($term.Length -ge 4 -and $term -notmatch '^[0-9\s\W]+$') {
+        $values.Add($term)
+      }
+    }
+  }
+
+  return @($values)
 }
 
 $coreObjects = foreach ($g in $goals) {
@@ -87,10 +123,8 @@ foreach ($g in $goals) {
   $terms = @(Get-QueryTerms (Join-Path $queryDir $g.file))
   $negativeTerms = @()
   $queryText = Get-Content (Join-Path $queryDir $g.file) -Raw
-  $notIndex = $queryText.IndexOf(" NOT ")
-  if ($notIndex -ge 0) {
-    $negativeTerms = [regex]::Matches($queryText.Substring($notIndex), '(?:TITLE-ABS|AUTHKEY)\("([^"]+)"\)') |
-      ForEach-Object { $_.Groups[1].Value.Trim() } |
+  if ($queryText -match '(?i)\bNOT\s*\(') {
+    $negativeTerms = Get-FieldedTerms $queryText $true |
       Where-Object { $_.Length -ge 4 } |
       Group-Object { $_.ToLowerInvariant() } |
       ForEach-Object { $_.Group[0] } |

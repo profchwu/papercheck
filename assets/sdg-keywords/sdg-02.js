@@ -6,7 +6,70 @@ window.SDG_KEYWORDS[2] = {
     "source":  "Elsevier 2023 Sustainable Development Goals (SDGs) Mapping, DOI: 10.17632/y2zyy9vwzy.1, CC BY 4.0",
     "terms":  [
                   {
+                      "term":  "precision-agriculture",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precisionagriculture",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agri*-environment*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "agro-pastoralists",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agrosilvopastoral",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "entrepreneurship",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "drought-tolerant",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agrobiodiversity",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -24,7 +87,25 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "agrienvironment*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "non-agricultural",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "farmers\u0027market*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -42,6 +123,33 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "decision-making",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agropastoralism",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agro-ecological",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "silvo-pastoral",
                       "weight":  2,
                       "fields":  [
@@ -51,7 +159,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "agro-pastoral",
+                      "term":  "green-manuring",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -60,7 +168,70 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "pluriactivit*",
+                      "term":  "agroecosystems",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "undernutrition",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "undernourished",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "ethnobotanical",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "crop-livestock",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "decisionmaking",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "decision*-mak*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "hyperspectral",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -78,7 +249,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "silvopastoral",
+                      "term":  "pluriactivit*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -96,7 +267,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "agroforestry",
+                      "term":  "participation",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -105,7 +276,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "pastoralist*",
+                      "term":  "greenmanuring",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -114,7 +285,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small-holder",
+                      "term":  "Expropriation",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -123,7 +294,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallholders",
+                      "term":  "agro-pastoral",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -132,7 +303,61 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small-farmer",
+                      "term":  "intercropping",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Climate-smart",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "croplivestock",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "silvopastoral",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "post-harvest",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Bioherbicide",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -150,25 +375,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallholding",
-                      "weight":  2,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "agricultural",
-                      "weight":  2,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "productivit*",
+                      "term":  "micro-credit",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -186,7 +393,52 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small*-hold*",
+                      "term":  "green-manure",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "small-farmer",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agroforestry",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Silvopasture",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agriculture*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -204,7 +456,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallfarmer",
+                      "term":  "smallholding",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -213,7 +465,97 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "pastoralism",
+                      "term":  "small*-hold*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "decisionmak*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "small-holder",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Microfinance",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agribusiness",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "micro*-farm*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "malnutrition",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallholders",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "pastoralist*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "productivit*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "microcredit",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -231,7 +573,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "livelihood*",
+                      "term":  "cultivation",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -240,7 +582,25 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "cultivation",
+                      "term":  "agroecology",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "greenmanure",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "opportunit*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -258,7 +618,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallholder",
+                      "term":  "adolescent*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -276,6 +636,204 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "agritourism",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "irrigation*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "reflectance",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "malnourish*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallfarmer",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agroforest*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "postharvest",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "kwashiorkor",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Biocontrol*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "involvement",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallholder",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Increasing*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "parasitoid*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "marginaliz*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultur*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "amerindian*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "marginalis*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "aspergillus",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sustainable",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "fertilizer*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "livelihood*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "fertiliser*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "pastoralist",
                       "weight":  2,
                       "fields":  [
@@ -285,7 +843,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "irrigation",
+                      "term":  "pastoralism",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -294,7 +852,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "vegetables",
+                      "term":  "ethnobotan*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -303,7 +861,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "household*",
+                      "term":  "ethnobotany",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -321,16 +879,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "production",
-                      "weight":  2,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "employment",
+                      "term":  "biocontrol",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -348,7 +897,106 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "vegetables",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "irrigation",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "small-farm",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "irrigating",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "microfarm*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultu*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "production",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricltur*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "indigenous",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "beekeeper*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "plantation",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Landowning",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -366,7 +1014,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallfarm",
+                      "term":  "intercrop*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -375,7 +1023,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "financing",
+                      "term":  "strawberry",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -384,7 +1032,61 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "agronomic",
+                      "term":  "employment",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "vulnerable",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Pesticide*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "volatility",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agrofores*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "household*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "vegetable*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -402,7 +1104,43 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "livestock",
+                      "term":  "fishermen",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricult*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "ownership",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sugarcane",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agronomic",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -412,6 +1150,96 @@ window.SDG_KEYWORDS[2] = {
                   },
                   {
                       "term":  "sustainab",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "livestock",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "crop-wild",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Teenager*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "renewable",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "producer*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "household",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "grapevine",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "pastoral*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallfarm",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "expropri*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -438,7 +1266,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "pastora*",
+                      "term":  "equitable",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -447,7 +1275,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "revenue*",
+                      "term":  "financing",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -456,7 +1284,34 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "product*",
+                      "term":  "workload",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agrarian",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "cucumber",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "stabili*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -474,7 +1329,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "vegetab*",
+                      "term":  "stunting",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -492,15 +1347,6 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "non-farm",
-                      "weight":  2,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
                       "term":  "sustain*",
                       "weight":  2,
                       "fields":  [
@@ -510,7 +1356,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "tillage",
+                      "term":  "non-farm",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -519,7 +1365,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "grazing",
+                      "term":  "pastora*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -528,7 +1374,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "on-farm",
+                      "term":  "drought*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -537,7 +1383,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "herders",
+                      "term":  "tomatoes",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -546,7 +1392,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "legumes",
+                      "term":  "orchards",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -555,7 +1401,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "nonfarm",
+                      "term":  "preserve",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -564,7 +1410,160 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "profit*",
+                      "term":  "cropwild",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "barriers",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "supplies",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "brassica",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "conserve",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "vegetab*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "payment*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "chickpea",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "product*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "property",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "revenue*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Silvopa*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "empower*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "leader*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "soybean",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "solanum",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "restore",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "herder*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -582,7 +1581,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "legume",
+                      "term":  "lettuce",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -591,7 +1590,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "onfarm",
+                      "term":  "gender*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -600,7 +1599,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "forage",
+                      "term":  "farmer*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -609,7 +1608,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "horti*",
+                      "term":  "profit*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -618,7 +1617,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "cattle",
+                      "term":  "access*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -627,7 +1626,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "yield*",
+                      "term":  "orchard",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -636,7 +1635,142 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "manure",
+                      "term":  "nonfarm",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "poultry",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "herders",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "grazing",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "cabbage",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "chicken",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "poverty",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "tillage",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sorghum",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "on-farm",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "legumes",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "potato",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "pepper",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Access",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "tomato",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "flood*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -654,7 +1788,52 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "income",
+                      "term":  "maasai",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "fruits",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "tubers",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "cattle",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "supply",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "manure",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -672,7 +1851,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "maasai",
+                      "term":  "yield*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -681,7 +1860,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small",
+                      "term":  "income",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -690,7 +1869,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "farm*",
+                      "term":  "unpaid",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -699,7 +1878,259 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "agri*",
+                      "term":  "agrar*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "equity",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "fruit*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "input*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "growth",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "horti*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "citrus",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "gender",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "people",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "flavus",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "apples",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "cereal",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "aztec*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "famine",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "barley",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "onfarm",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "hunger",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "child*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "oryzae",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "adult*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "banana",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "legume",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "forage",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "native",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "apple",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "grape",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "rural",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "farm-",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "tuber",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -717,16 +2148,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "dairy",
-                      "weight":  2,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "herd*",
+                      "term":  "farm*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -744,15 +2166,6 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "goats",
-                      "weight":  2,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
                       "term":  "maize",
                       "weight":  2,
                       "fields":  [
@@ -762,7 +2175,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "crop",
+                      "term":  "farms",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -771,7 +2184,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "agro",
+                      "term":  "goats",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -780,7 +2193,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "feed",
+                      "term":  "maya*",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -789,7 +2202,106 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "soil",
+                      "term":  "small",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "herd*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "food*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "crop*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "wheat",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Women",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agri*",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "dairy",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "labor",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "peach",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "land",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "goat",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -807,7 +2319,52 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "cows",
+                      "term":  "soil",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "pear",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "corn",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "bank",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "save",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "crop",
                       "weight":  2,
                       "fields":  [
                                      "title",
@@ -834,7 +2391,331 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "cows",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "bean",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "food",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "beef",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "farm",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "wage",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "ndvi",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agro",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "beet",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "feed",
+                      "weight":  2,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Special Supplemental Nutrition Program for Women",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "climate change impacts on crop production",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Agricultural and environmental policies",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "apparent soil electrical conductivity",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Agrarian Reform and Rural Development",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agriculture wireless sensor networks",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "indigenous* methods* in* agricultur*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "reformed Common Agricultural Policy",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision agriculture technologies",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "access* to* international* market*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "access to agricultural information",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "integrated crop-livestock systems",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Access to rural sources of income",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision agriculture monitoring",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "integrated croplivestock systems",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "differential access to resources",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "integrated crop-livestock system",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "access to modern energy services",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sustain* agricultural* systems*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "integrated croplivestock system",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "farmers in developing countries",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural market information",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sustainable biofuel production",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "climate impacts on agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision turfgrass management",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Access* to* political* office*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision seed-metering device",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -852,6 +2733,177 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "germplasm conservation effort*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision nitrogen management",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural price volatility",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural commodity prices",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Women* in* agrarian* context*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "site-specific weed management",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "farmers\u0027 indigenous knowledge",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision seedmetering device",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agri*-environmental* measure*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "commodity price stabilization",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "farm animal genetic resources",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Female* agricultural* worker*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agri*-environmental* program*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "site-specific crop management",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Agricultural intensification",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agri*-environmental* scheme*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "insufficient nutrient intake",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "access to financial services",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sitespecific weed management",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "smallholder dairy production",
                       "weight":  5,
                       "fields":  [
@@ -861,7 +2913,97 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small-scale farming systems",
+                      "term":  "agricultural commodity price",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural and food prices",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sitespecific crop management",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "adaptation to climate change",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "access to land and resources",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Access to farming technology",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "organic vegetable production",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sustaina* crop* production*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "induced systemic resistance",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agrienvironmental* program*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Access* to* cropping* land*",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -879,7 +3021,214 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallholder pig production",
+                      "term":  "Access* to* export* market*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Sustainable intensification",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "management for biodiversity",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agri*-environmental* polic*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "land* development* program*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "access to genetic resources",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "information on market price",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Cultivated and wild species",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "international market access",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural sustainability",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agrienvironmental* measure*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "small-scale farming systems",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sustaina* food* production*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Feminization of agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "feminisation of agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "access to natural resources",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "variable rate fertilization",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "increasing food production",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "price stabilization policy",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agriculture remote sensing",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "food system sustainability",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "fAlternative food movement",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Alternative food movements",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Child* nutrition* program*",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -897,7 +3246,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallholder dairy farmers",
+                      "term":  "smallholder pig production",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -906,7 +3255,97 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallholder dairy farming",
+                      "term":  "integrated pest management",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agrienvironmental* scheme*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "inequitable access to land",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "market and credit accesses",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural modernisation",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "access to water resources",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural* occupation*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "variable rate application",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "market information system",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "low-input farming systems",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agrienvironmental* polic*",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -924,7 +3363,205 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "active crop canopy sensor",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "volatility of food prices",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Water resource management",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Impacts of climate change",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision crop protection",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "integrated crop-livestock",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "variable-rate application",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "climate-smart agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural biodiversity",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision metering device",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "adaptation and mitigation",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallholder dairy farming",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "climate smart agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sustainability transition",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural productivity",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallholder dairy farmers",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "breeding and conservation",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "food price stabilization",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "conventional and organic",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "variable rate fertilizer",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "climatesmart agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "smallholder agroforestry",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "variable rate technology",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -942,7 +3579,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small-scale plantations",
+                      "term":  "lowinput farming systems",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -951,7 +3588,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small-scale dairy farms",
+                      "term":  "organic and conventional",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -960,7 +3597,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small-scale agriculture",
+                      "term":  "integrated croplivestock",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -969,7 +3606,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallholder agriculture",
+                      "term":  "agricultural* technolog*",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -978,7 +3615,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "agricultural production",
+                      "term":  "sustainable agricultural",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -987,7 +3624,259 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallholder dairy farms",
+                      "term":  "traditional* agricultur*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Accessing and using land",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Collection W/2 landraces",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "conservation agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural imperialism",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Access* to* rural* land*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Agricultural development",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "land* equivalent* ratio*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Agricultural* household*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "variablerate application",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Agricultural seasonality",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "conservation w/2 variet*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallholder* agricultur*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agroecological practices",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agri-horticultural crops",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Opportunities for women",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "yield monitoring system",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "production* constraint*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision fertilization",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Access* to* key* asset*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision seed-metering",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural employment",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sustainable agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural* communit*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "site-specific herbicide",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "organic food production",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "traditional agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Agricultural* practice*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "organic farming systems",
                       "weight":  5,
                       "fields":  [
                                      "title",
@@ -1005,6 +3894,168 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "small-scale plantations",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "small-scale agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "indigenous farm workers",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "plant genetic resource*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "access to local markets",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural production",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "adapt to climate change",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Agrarian reform program",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallholder agriculture",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "food price fluctuations",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "small-scale dairy farms",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "wheat genetic diversity",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "accessibility to credit",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "indigenous smallholders",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "amerindian* agricultur*",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Climate risk management",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallholder dairy farms",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "access to formal credit",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "asset*-poor* household*",
                       "weight":  5,
                       "fields":  [
@@ -1014,7 +4065,43 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallscale dairy farms",
+                      "term":  "agrihorticultural crops",
+                      "weight":  5,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "integrated and organic",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "rural access obstacles",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sustainable production",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "food safety regulation",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1032,6 +4119,78 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "induced* plant* defen*",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "maize price volatility",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "price volatility risk*",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "food price instability",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Women\u0027s rights to land",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "inequalities in access",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Smallholder farm women",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "female farm households",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "smallholder production",
                       "weight":  4,
                       "fields":  [
@@ -1041,7 +4200,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "value-added processing",
+                      "term":  "biological agriculture",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1050,16 +4209,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallholder irrigation",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale agriculture",
+                      "term":  "access to microfinance",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1077,7 +4227,286 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "crop genetic diversity",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision agricultural",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "germplasm conservation",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "small-scale irrigation",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural emission*",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision seedmetering",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "environmental problem*",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "food price variability",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallscale dairy farms",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "participation of women",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "value-added processing",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Non*-farming* activit*",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural economies",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "sitespecific herbicide",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "bacillus thuringiensis",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallscale agriculture",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "crop-livestock systems",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "crop-to-wild gene flow",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "crop genetic resources",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "smallholder irrigation",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Alternative production",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "nutritional assistance",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "opportunity for women",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "site-specific farming",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "resistan* W/2 variet*",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural* compan*",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "genetic relationships",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "germplasm collection*",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Genetic relationship*",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "agricultural* domain*",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "indigenous pig breeds",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Women\u0027s participation",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1095,7 +4524,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallholder livestock",
+                      "term":  "first* nations* farm*",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1104,7 +4533,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small-scale fisheries",
+                      "term":  "food price volatility",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1113,25 +4542,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "indigenous vegetation",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small scale fisheries",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "valueadded processing",
+                      "term":  "precision viticulture",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1149,6 +4560,42 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
+                      "term":  "Periurban agriculture",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "Female farm household",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "precision application",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
+                      "term":  "indigenous vegetation",
+                      "weight":  4,
+                      "fields":  [
+                                     "title",
+                                     "abstract",
+                                     "keywords"
+                                 ]
+                  },
+                  {
                       "term":  "smallscale irrigation",
                       "weight":  4,
                       "fields":  [
@@ -1158,7 +4605,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "resource-poor farmers",
+                      "term":  "Environmental impact*",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1167,7 +4614,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small-scale producers",
+                      "term":  "renewable agriculture",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1176,7 +4623,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallscale producers",
+                      "term":  "valueadded processing",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1185,7 +4632,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "economic empowerment",
+                      "term":  "croplivestock systems",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1194,7 +4641,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small holder farmers",
+                      "term":  "Agricultural* credit*",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1203,7 +4650,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "resourcepoor farmers",
+                      "term":  "intervention strateg*",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1212,7 +4659,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small* holder* farm*",
+                      "term":  "small-scale fisheries",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1221,7 +4668,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "small-scale forestry",
+                      "term":  "Women and agriculture",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -1230,862 +4677,7 @@ window.SDG_KEYWORDS[2] = {
                                  ]
                   },
                   {
-                      "term":  "smallscale fisheries",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-holder farmers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "asset*-poor* famil*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale growers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale fishery",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallholder farming",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "additional* source*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale farmers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "fishing* household*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale fishers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small*-scale* food*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "subsistence farming",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "nomadic pastoralism",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale fishing",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale forestry",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "financial* barrier*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small* scale* farm*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "access* to* financ*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "Financial* support*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "financial* service*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallholder systems",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small scale farmers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale farming",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small scale farming",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallholder farmers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small landholdings",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallholder cattle",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale fishery",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale farmers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallholder farmer",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small land holders",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale farming",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "production systems",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale fishers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallholder* farm*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale fisher",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale fishing",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallholder coffee",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "farming households",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale forest",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale growers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale farmer",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale fisher",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale* food*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale farmer",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale farms",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallholder farms",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small landholders",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small scale farms",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale dairy",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "assetpoor* famil*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale forest",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallholder dairy",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "cropping systems",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale fish",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small-scale farm",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small scale farm",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallholder farm",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small* producer*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "pastoral systems",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale farms",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale dairy",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "new* opportunit*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "food production",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "milk production",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "crop production",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "farm households",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale fish",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "financial* aid*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "smallscale farm",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "micro* finance*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small producers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "agro* pastoral*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "micro* credit*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "rural* financ*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small producer",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "farm household",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "soil fertility",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small growers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small farming",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "value* added*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "scale farming",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small farmers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "family labour",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small holders",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small holder",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "food* secur*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "Small* farm*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small farmer",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "micro* lend*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "poor farmers",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "dairy farms",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "cash* crop*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small farms",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "poor* farm*",
-                      "weight":  4,
-                      "fields":  [
-                                     "title",
-                                     "abstract",
-                                     "keywords"
-                                 ]
-                  },
-                  {
-                      "term":  "small farm",
+                      "term":  "agriculture precision",
                       "weight":  4,
                       "fields":  [
                                      "title",
@@ -2097,60 +4689,7 @@ window.SDG_KEYWORDS[2] = {
     "negativeTerms":  [
                           "pine needle trees",
                           "encephalitis virus",
-                          "wild soybeans",
-                          "crop wild relative",
-                          "wheat genetic diversity",
-                          "indigen* rice* var*",
-                          "crop wild relatives",
-                          "farm animal genetic resources",
-                          "crop-wild",
-                          "cropwild",
-                          "wild soybean",
-                          "crop wild relatives (cwr)",
-                          "agricultural biodiversity",
-                          "farmer varieties",
-                          "landrace populations",
-                          "wild rice",
-                          "wild barley",
-                          "landrace diversity",
-                          "crop varieties",
-                          "indigenous pig breeds",
-                          "genetic diversity",
-                          "genetic resources",
-                          "genetic resource",
-                          "agri-horticultural crops",
-                          "crops",
-                          "farm animal",
-                          "livestock",
-                          "cattle",
-                          "beef",
-                          "chicken",
-                          "poultry",
-                          "goat",
-                          "animal husbandry",
-                          "farming",
-                          "conserve",
-                          "preserve",
-                          "save",
-                          "bank",
-                          "restore",
-                          "agrihorticultural crops",
-                          "landrace accessions",
-                          "heirloom varieties",
-                          "wild crop relatives",
-                          "crop genetic diversity",
-                          "crop diversity",
-                          "crop biodiversity",
-                          "crop genetic resources",
-                          "wild potato",
-                          "crop* biodivers*",
-                          "agrobiodiversity",
-                          "crop-to-wild gene flow",
-                          "croptowild gene flow",
-                          "large white",
-                          "genetic* divers*",
-                          "genetic* conserv*",
-                          "wheat landraces",
+                          "genetically engineered",
                           "latin american",
                           "rat species",
                           "bat species",
@@ -2164,17 +4703,38 @@ window.SDG_KEYWORDS[2] = {
                           "feed intake",
                           "piglet mortality",
                           "carrot fly",
-                          "amerindian* farm*",
-                          "indigenous knowledge",
-                          "farm*",
-                          "maya* agricultur*",
-                          "ethnobotanical",
-                          "agricultur*",
-                          "crop",
-                          "production",
-                          "amerindian*",
-                          "first nations",
-                          "indigenous"
+                          "turfgrass",
+                          "arable reversion",
+                          "biofuel*",
+                          "biogas",
+                          "organic* batter*",
+                          "phytoremediation",
+                          "selection markers",
+                          "intellectual* property* right*",
+                          "movement to slaughter",
+                          "carbon uptake",
+                          "pollution* control* option*",
+                          "obesity",
+                          "agricultural* worker*",
+                          "water supply and demand",
+                          "forestry",
+                          "steel",
+                          "urban green space",
+                          "rental land",
+                          "labour market information",
+                          "ratoon* stunting* diseas*",
+                          "rats",
+                          "Patients with stroke",
+                          "tendon lesion",
+                          "tendon* injur*",
+                          "bean population",
+                          "mouse",
+                          "mice",
+                          "Columbia lance nematode",
+                          "enteral formula",
+                          "insulin*-like* growth* factor*",
+                          "insulinlike* growth* factor*",
+                          "enteral nutrition"
                       ],
     "queryFile":  "sources/elsevier-sdg-2023/queries/SDG2.txt"
 };

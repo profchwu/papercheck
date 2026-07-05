@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NTHU Sustainability Paper Checker V1.0 | Revised 2026-07-04</title>
+  <title>NTHU Sustainability Paper Checker V1.1 | Revised 2026-07-05</title>
   <script src="assets/sdg-core-index.js"></script>
   <style>
     :root {
@@ -60,7 +60,7 @@
 
     .topbar {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
       gap: 20px;
       align-items: start;
       margin-bottom: 22px;
@@ -107,6 +107,44 @@
       background: var(--surface);
       color: #4b4031;
       font-size: 13px;
+      justify-self: end;
+    }
+
+    .usage-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(118px, 1fr));
+      gap: 12px;
+      justify-self: center;
+      align-self: center;
+      min-width: 280px;
+    }
+
+    .metric-tile {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 12px 28px rgba(28, 48, 40, 0.08);
+      text-align: center;
+    }
+
+    .metric-number {
+      display: block;
+      color: var(--primary);
+      font-size: 34px;
+      font-weight: 850;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .metric-label {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .workspace {
@@ -465,6 +503,24 @@
       font-weight: 800;
     }
 
+    .legal-block {
+      display: grid;
+      gap: 8px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .legal-block p {
+      margin: 0;
+    }
+
+    .legal-title {
+      color: var(--ink);
+      font-weight: 850;
+    }
+
     .sr-status {
       position: absolute;
       left: -9999px;
@@ -478,6 +534,12 @@
 
       .disclaimer {
         max-width: none;
+        justify-self: stretch;
+      }
+
+      .usage-metrics {
+        justify-self: stretch;
+        min-width: 0;
       }
     }
 
@@ -522,13 +584,23 @@
       <div class="brand">
         <div class="brand-mark" aria-hidden="true">SDG</div>
         <div>
-          <h1>NTHU Sustainability Paper Checker V1.0</h1>
-          <p class="subtitle">Revised 2026-07-04. 國立清華大學數理教育研究所 吳智鴻教授開發</p>
-          <p class="subtitle">A browser-based SDG detectability checker for title, abstract, and keywords.</p>
+          <h1>NTHU Sustainability Paper Checker V1.1</h1>
+          <p class="subtitle">Revised 2026-07-05. 國立清華大學數理教育研究所 吳智鴻教授開發</p>
+          <p class="subtitle">An independent browser-based SDG detectability checker for title, abstract, and keywords.</p>
+        </div>
+      </div>
+      <div class="usage-metrics" aria-label="Usage metrics">
+        <div class="metric-tile">
+          <span class="metric-number" id="checkCount">0</span>
+          <span class="metric-label">Checks</span>
+        </div>
+        <div class="metric-tile">
+          <span class="metric-number" id="pageViewCount">0</span>
+          <span class="metric-label">Page views</span>
         </div>
       </div>
       <div class="disclaimer">
-        This tool is for reference only. PASS/FAIL reflects this tool's rule-based assessment using downloaded SDG mapping references; the final recognition decision must follow National Tsing Hua University's official review and standards.
+        Independent reference tool. This is not an official National Tsing Hua University review system, and it does not represent or guarantee any NTHU sustainability paper recognition decision.
       </div>
     </header>
 
@@ -601,9 +673,12 @@
     </main>
 
     <footer class="footer">
-      References: Elsevier 2023 Sustainable Development Goals (SDGs) Mapping, DOI 10.17632/y2zyy9vwzy.1, CC BY 4.0;
-      <a href="https://sdgs.un.org/goals">UN Sustainable Development Goals</a>;
-      <a href="https://sdgs.nthu.edu.tw/">NTHU SDGs</a>.
+      <div class="legal-block">
+        <p><span class="legal-title">Disclaimer:</span> This independent tool is for academic reference only. PASS/FAIL and SDG matches are rule-based suggestions. Final recognition must follow National Tsing Hua University's official standards and review process.</p>
+        <p><span class="legal-title">Data notice:</span> SDG terms are derived and simplified from public reference sources, including Elsevier 2023 Sustainable Development Goals (SDGs) Mapping, DOI 10.17632/y2zyy9vwzy.1, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Changes were made for browser-side matching. Attribution does not imply endorsement by Elsevier, the United Nations, or National Tsing Hua University.</p>
+        <p><span class="legal-title">Privacy notice:</span> Title, abstract, and keyword analysis runs locally in this browser. Paper text is not uploaded to a server. Checks and page views are stored only in this browser's local storage.</p>
+        <p><span class="legal-title">References:</span> <a href="https://elsevier.digitalcommonsdata.com/datasets/y2zyy9vwzy/1">Elsevier SDG Mapping data</a>; <a href="https://sdgs.un.org/goals">UN Sustainable Development Goals</a>; <a href="https://sdgs.nthu.edu.tw/">NTHU SDGs</a>.</p>
+      </div>
     </footer>
   </div>
 
@@ -675,10 +750,47 @@
       sampleBtn: document.getElementById("sampleBtn"),
       clearBtn: document.getElementById("clearBtn"),
       copyBtn: document.getElementById("copyBtn"),
+      checkCount: document.getElementById("checkCount"),
+      pageViewCount: document.getElementById("pageViewCount"),
       summary: document.getElementById("summary"),
       review: document.getElementById("review"),
       srStatus: document.getElementById("srStatus")
     };
+
+    const metricKeys = {
+      checks: "nthu-sdg-check-count",
+      pageViews: "nthu-sdg-page-view-count"
+    };
+
+    function readMetric(key) {
+      try {
+        const value = Number.parseInt(localStorage.getItem(key) || "0", 10);
+        return Number.isFinite(value) && value >= 0 ? value : 0;
+      } catch (error) {
+        return 0;
+      }
+    }
+
+    function saveMetric(key, value) {
+      try {
+        localStorage.setItem(key, String(value));
+      } catch (error) {
+        // Keep the checker usable when browser storage is unavailable.
+      }
+      return value;
+    }
+
+    function renderMetrics() {
+      el.checkCount.textContent = readMetric(metricKeys.checks).toLocaleString("en-US");
+      el.pageViewCount.textContent = readMetric(metricKeys.pageViews).toLocaleString("en-US");
+    }
+
+    function incrementMetric(key) {
+      saveMetric(key, readMetric(key) + 1);
+      renderMetrics();
+    }
+
+    incrementMetric(metricKeys.pageViews);
 
     const fieldLabelPattern = "(?:title|paper\\s+title|abstract|keywords?|key\\s*words?|\\u8ad6\\u6587\\u984c\\u76ee|\\u984c\\u76ee|\\u6458\\u8981|\\u95dc\\u9375\\u5b57)";
 
@@ -1082,6 +1194,7 @@
 
     function renderResults(result) {
       const primary = result.bestFit.primary;
+      const reliablePrimary = primary && primary.score >= PASS_THRESHOLDS.finalScore;
       const decisionClass = result.decision.decision.toLowerCase();
       const loaded = [...loadedModules].sort((a, b) => a - b).map(id => `SDG ${id}`).join(", ") || "None";
 
@@ -1097,7 +1210,7 @@
 
         <div class="sdg-card">
           <div class="eyebrow">Best-fit SDG</div>
-          ${primary ? `
+          ${reliablePrimary ? `
             <div class="sdg-main">
               <div class="sdg-badge">${escapeHtml(primary.code)}</div>
               <div>
@@ -1105,9 +1218,9 @@
                 <div class="sdg-official">${escapeHtml(primary.officialName || "")}</div>
               </div>
             </div>
-          ` : `<div class="empty">No SDG match detected.</div>`}
+          ` : `<div class="empty">No reliable SDG match detected.</div>`}
           <div class="chips">
-            ${result.bestFit.secondary.map(item => `<span class="chip">${escapeHtml(item.code)} ${escapeHtml(item.name)} (${item.score.toFixed(1)})</span>`).join("") || `<span class="chip">No close secondary SDG</span>`}
+            ${(reliablePrimary ? result.bestFit.secondary : []).map(item => `<span class="chip">${escapeHtml(item.code)} ${escapeHtml(item.name)} (${item.score.toFixed(1)})</span>`).join("") || `<span class="chip">No close secondary SDG</span>`}
           </div>
         </div>
 
@@ -1153,6 +1266,8 @@
     }
 
     async function checkPaper() {
+      incrementMetric(metricKeys.checks);
+
       const parsedPaper = {
         title: el.title.value.trim(),
         abstract: el.abstract.value.trim(),
